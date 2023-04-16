@@ -1,0 +1,68 @@
+.btn-search {
+  background-color: rgb(31, 59, 121);
+  color: aliceblue;
+}
+
+.btn-search:hover {
+  background-color: rgb(156, 186, 250);
+  color: aliceblue;
+}
+
+.btn-create {
+  background-color: rgb(31, 59, 121);
+  color: aliceblue;
+}
+
+.btn-create:hover {
+  background-color: rgb(156, 186, 250);
+  color: aliceblue;
+}
+
+.btn-update {
+  background-color: rgb(36, 23, 82);
+  color: aliceblue;
+}
+
+.btn-update:hover {
+  background-color: rgb(83, 64, 153);
+  color: aliceblue;
+}
+
+.btn-delete {
+  background-color: rgb(90, 8, 72);
+  color: aliceblue;
+}
+
+.btn-delete:hover {
+  background-color: rgb(175, 16, 141);
+  color: aliceblue;
+}
+
+.btn-cancel {
+  background-color: rgb(6, 82, 108);
+  color: aliceblue;
+}
+
+.btn-cancel:hover {
+  background-color: rgb(77, 202, 252);
+  color: aliceblue;
+}
+
+.back_list_button {
+  margin-top: 10px;
+}
+
+
+/* 페이징 관련 */
+
+.btn-page {
+  background-color: rgb(31, 59, 121);
+  font-size: smaller;
+  color: aliceblue;
+}
+
+.btn-page:hover {
+  background-color: rgb(156, 186, 250);
+  font-size: smaller;
+  color: aliceblue;
+}

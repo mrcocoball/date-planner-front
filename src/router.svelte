@@ -1,5 +1,6 @@
 <script>
   import { Route } from 'tinro'
+  import { isLogin } from './store/auth/authStore';
 
   // 로그인, 회원가입
   import Login from './pages/auth/Login.svelte';
@@ -33,18 +34,31 @@
 
 <Route path="/" redirect="places" />
 
-<Route path="/login"><Login /></Route>
-<Route path="/join"><Join /></Route>
+{#if !$isLogin}
+  <Route path="/login"><Login /></Route>
+  <Route path="/join"><Join /></Route>
+{:else}
+  <Route path="/login"><NotFound /></Route>
+  <Route path="/join"><NotFound /></Route>
+{/if}
 
 <Route path="/places"><Places /></Route>
 <Route path="/places/*"><PlaceDetail /></Route>
 <Route path="/recommendation"><Recommendation /></Route>
 
-<Route path="/mypage"><MyPages /></Route>
-<Route path="/mypage/reviews/*"><Reviews /></Route>
-<Route path="/mypage/bookmarks/*"><Bookmarks /></Route>
-<Route path="/mypage/plans"><Plans /></Route>
-<Route path="/mypage/plans/*"><PlanDetail /></Route>
+{#if $isLogin}
+  <Route path="/mypage"><MyPages /></Route>
+  <Route path="/mypage/reviews/*"><Reviews /></Route>
+  <Route path="/mypage/bookmarks/*"><Bookmarks /></Route>
+  <Route path="/mypage/plans"><Plans /></Route>
+  <Route path="/mypage/plans/*"><PlanDetail /></Route>
+{:else}
+  <Route path="/mypage"><Login /></Route>
+  <Route path="/mypage/reviews/*"><Login /></Route>
+  <Route path="/mypage/bookmarks/*"><Login /></Route>
+  <Route path="/mypage/plans"><Login /></Route>
+  <Route path="/mypage/plans/*"><Login /></Route>
+{/if}
 
 <Route path="/support"><Supports /></Route>
 <Route path="/support/annoucements"><Announcements /></Route>
