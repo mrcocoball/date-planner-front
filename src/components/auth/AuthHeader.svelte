@@ -9,7 +9,7 @@
 
 <nav id="main_nav" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
   <div class="container">
-    <a class="navbar-brand" href="#">Date Planner</a>
+    <a class="navbar-brand" href="">Date Planner</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
             aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,14 +25,14 @@
         </li>
         {#if $isLogin}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">플랜 짜기</a>
+            <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">플랜 짜기</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/mypage/plans">플랜 보기</a></li>
               <li><a class="dropdown-item">플랜 작성</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">마이 페이지</a>
+            <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">마이 페이지</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/mypage">내 프로필</a></li>
               <li><a class="dropdown-item" href="/mypage/bookmarks">북마크한 장소</a></li>
@@ -42,7 +42,7 @@
           </li>
         {/if}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/support">고객센터</a></li>
             <li><a class="dropdown-item" href="/support/announcements">공지사항</a></li>
