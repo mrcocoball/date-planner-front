@@ -55,10 +55,22 @@
 
 /* 페이징 관련 */
 
-.btn-page {
+.btn-page-active {
   background-color: rgb(31, 59, 121);
   font-size: smaller;
   color: aliceblue;
+}
+
+.btn-page-active:hover {
+  background-color: rgb(156, 186, 250);
+  font-size: smaller;
+  color: aliceblue;
+}
+
+.btn-page {
+  background-color: rgb(227, 232, 243);
+  font-size: smaller;
+  color: rgb(31, 59, 121);
 }
 
 .btn-page:hover {
