@@ -27,8 +27,6 @@
   
 </script>
 
-<Route path="/" redirect="places" />
-
 {#if !$isLogin}
   <Route path="/login"><Login /></Route>
   <Route path="/join"><Join /></Route>
@@ -37,7 +35,7 @@
   <Route path="/join"><NotFound /></Route>
 {/if}
 
-<Route path="/places/*"><Places /></Route>
+<Route path="/"><Places /></Route>
 <Route path="/recommendation"><Recommendation /></Route>
 
 {#if $isLogin}
