@@ -1,6 +1,6 @@
 import { writable, get, derived } from 'svelte/store'
 import { auth } from '../auth/authStore'
-import { getApi } from '../../service/api'
+import { getApi, postApi, delApi } from '../../service/api'
 
 // 페이지 초기화
 function setPageInitialization() {
@@ -178,10 +178,10 @@ function setPlaceDetail() {
       image_url: '',
       description: '',
       bookmarked: false
-    }
+    },
   }
 
-  const { subscribe, set } = writable({...initValues})
+  const { subscribe, update, set } = writable({...initValues})
 
   const getPlace = async (place_id) => {
 
@@ -203,9 +203,63 @@ function setPlaceDetail() {
 
   }
 
+  const resetPlace = () => {
+    set({...initValues})
+  }
+
+  const bookmark = async (place_id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/bookmarks?placeId=${place_id}`,
+        access_token: access_token
+      }
+
+      const getData = await postApi(options)
+
+      update(data => {
+        data.data.bookmarked = true
+        return data
+      })
+    }
+    catch(error) {
+      alert('오류가 발생했습니다. 다시 시도해주세요')
+    }
+
+  }
+
+  const cancelBookmark = async (place_id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/bookmarks/place/${place_id}`,
+        access_token: access_token
+      }
+
+      await delApi(options)
+      
+      update(data => {
+        data.data.bookmarked = false
+
+        return data
+      })
+    }
+    catch(error) {
+      alert('오류가 발생했습니다. 다시 시도해주세요')
+    }
+
+  }
+
   return {
     subscribe,
-    getPlace
+    getPlace,
+    bookmark,
+    cancelBookmark,
+    resetPlace
   }
 
 }

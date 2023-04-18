@@ -1,11 +1,15 @@
 <script>
-  import { afterUpdate } from 'svelte'
-  import ReviewList from '../mypage/reviews/ReviewList.svelte';
+  import { afterUpdate, createEventDispatcher, onDestroy } from 'svelte'
+  import { auth, isLogin } from "../../store/auth/authStore";
+  import ReviewInPlace from './ReviewInPlace.svelte';
   export let placeDetail
   export let detailMode
 
+  const dispatch = createEventDispatcher()
+
   const offDetailMode = () => {
     detailMode = false
+    dispatch('detail-off')
   }
 
   afterUpdate(() => {
@@ -24,11 +28,41 @@
 
   })
 
+  const onBookmark = async () => {
+    try {
+      await placeDetail.bookmark($placeDetail.data.place_id)
+    }
+    catch(error) {
+      alert(error.response.data.msg)
+    }
+  }
+
+  const offBookmark = async () => {
+    try {
+      await placeDetail.cancelBookmark($placeDetail.data.place_id)
+    }
+    catch(error) {
+      alert(error.response.data.msg)
+    }
+  }
+
+  onDestroy(() => {
+    dispatch('detail-off')
+  })
+
 </script>
 
 <div>
   <button class="btn btn-cancel" on:click={offDetailMode}>창 숨기기</button>
 </div>
+
+{#if $isLogin}
+  {#if $placeDetail.data.bookmarked}
+    <button class="btn btn-cancel" on:click={offBookmark}>북마크 취소</button>
+  {:else}
+    <button class="btn btn-cancel" on:click={onBookmark}>북마크 하기</button>
+  {/if}
+{/if}
 
 <div id="map" style="width:100%;height:350px;">
   
@@ -56,6 +90,12 @@
       <div>
         <h6>장소명</h6>
         <p class="placeName" id="placeName">{$placeDetail.data.place_name}</p>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <h6>장소명</h6>
+        <p class="placeName" id="placeId">{$placeDetail.data.place_id}</p>
       </div>
     </li>
     <li class="list-group-item">
@@ -92,5 +132,8 @@
 </div>
 
 <div>
-  <ReviewList />
+  <h4>리뷰 목록</h4>
+  {#if $placeDetail.data.place_id}
+    <ReviewInPlace bind:placeDetailData={placeDetail} />
+  {/if}
 </div>
