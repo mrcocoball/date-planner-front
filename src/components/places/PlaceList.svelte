@@ -31,8 +31,6 @@
   const setPage = async (pageNum) => {
     try {
       await places.fetchPlacesByPage($requestPath, pageNum)
-      //currentPageNum = pageNum
-      //currentPlacesPage.setPage(pageNum)
     }
     catch(error) {
       alert(error.response.data.msg)
@@ -42,6 +40,12 @@
   const onDetailMode = (place_id) => {
     detailMode = true
     goPlaceDetail(place_id)
+  }
+
+  // 하위 컴포넌트인 PlaceDetail에서 이벤트 전달 받음
+  const offDetailMode = (event) => {
+    detailMode = false
+    placeDetail.resetPlace()
   }
 
   const goPlaceDetail = async (place_id) => {
@@ -58,7 +62,7 @@
 {#if detailMode}
 <div class="place_detail">
   {#if $placeDetail}
-    <PlaceDetail {placeDetail} bind:detailMode={detailMode} />
+    <PlaceDetail {placeDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
