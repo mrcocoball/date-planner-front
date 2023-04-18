@@ -23,7 +23,7 @@
 </script>
 
 {#if $isLogin}
-  <ReviewAddForm />
+  <ReviewAddForm bind:placeDetailData={placeDetailData} />
 {/if}
 {#if $reviews.data.content.length != 0}
 <div class="review_list">

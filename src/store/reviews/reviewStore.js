@@ -1,6 +1,6 @@
 import { writable, get, derived } from 'svelte/store'
 import { auth } from '../auth/authStore'
-import { getApi } from '../../service/api'
+import { getApi, postApi, delApi, putApi } from '../../service/api'
 
 // 페이지 초기화
 function setPageInitialization() {
@@ -141,12 +141,47 @@ function setReviews() {
 
   }
 
+  const addReview = async (place_id, title, description, reviewScore) => {
+    const access_token = get(auth).Authorization
+
+    try {
+
+      const options = {
+        path: "/api/v1/reviews",
+        data: {
+          placeId: place_id,
+          title: title,
+          description: description,
+          reviewScore: reviewScore
+        },
+        access_token: access_token
+      }
+
+      const newReview = await postApi(options)
+
+      update(datas => {
+        datas.data.content = [newReview.data, ...datas.data.content]
+        return datas
+      })
+
+      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
+      reviews.resetReviews()
+
+      return
+
+    }
+    catch(error) {
+      throw error
+    }
+
+  }
+
   const resetReviews = () => {
     set({...initValues})
     currentReviewsPage.resetPage()
   }
 
-    // 팝업 관련
+  // 팝업 관련
   // 선택 받은 객체의 id 값을 해당 스토어의 menuPopup에 저장
   const openMenuPopup = (id) => {
     update(datas => {
@@ -181,15 +216,88 @@ function setReviews() {
     })
   }
 
+  // 수정 기능
+  const updateReview = async(review) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const updateData = {
+        id: review.id,
+        title: review.title,
+        description: review.description,
+        reviewScore: review.reviewScore
+      }
+
+      const options = {
+        path: `/api/v1/reviews/${updateData.id}`,
+        data: {
+          title: updateData.title,
+          description: updateData.description,
+          reviewScore: updateData.reviewScore
+        },
+        access_token: access_token,
+      }
+
+      const updateReview = await putApi(options)
+
+      update(datas => {
+        const newReviewList = datas.data.content.map(review => {
+          if(review.id === updateReview.data.id) {
+            review = updateReview.data
+          }
+          return review
+        })
+        datas.data.content = newReviewList
+        return datas
+      })
+
+      reviews.closeEditModeReview()
+      alert('수정 완료')
+    }
+    catch(error) {
+      alert('수정 중에 오류가 발생하였습니다.')
+    }
+
+  }
+
+  const deleteReview = async (id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/reviews/${id}`,
+        access_token: access_token
+      }
+
+      await delApi(options)
+
+      update(datas => {
+        const newReviewList = datas.data.content.filter(review => review.id !== id)
+        datas.data.content = newReviewList
+        return datas
+      })
+
+    }
+    catch(error) {
+      alert('삭제 중에 오류가 발생하였습니다.')
+    }
+
+  }
+
   return {
     subscribe,
     fetchReviews,
     fetchReviewsByPage,
     resetReviews,
+    addReview,
     openMenuPopup,
     closeMenuPopup,
     openEditModeReview,
     closeEditModeReview,
+    updateReview,
+    deleteReview,
   }
 }
 
@@ -197,4 +305,3 @@ export const currentReviewsPage = setCurrentReviewsPage();
 export const currentReviewPaginationBar = setCurrentReviewsPaginationBar();
 export const reviews = setReviews();
 export const requestPath = writable('')
-//export const reviewDetail = setReviewDetail();
