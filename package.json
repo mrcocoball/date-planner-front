@@ -1,6 +1,7 @@
 {
   "name": "date-planner-front",
-  "private": true,
+  "homepage": "https://mrcocoball.github.io/date-planner-front",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
