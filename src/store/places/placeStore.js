@@ -54,7 +54,7 @@ function setCurrentPlacesPaginationBar() {
 
 }
 
-// 게시글 전체 조회 관련
+// 장소 전체 조회 관련
 function setPlaces() {
 
   let initValues = {
@@ -264,8 +264,107 @@ function setPlaceDetail() {
 
 }
 
+// 장소 추천 전체 조회 관련
+function setPlaceRecommendations() {
+
+  let initValues = {
+    data : {
+      content: [],
+      totalPages: 0,
+      totalElements: 0,
+      number: 0,
+    },
+  }
+
+  const { subscribe, update, set } = writable({...initValues})
+
+  const fetchPlaces = async (region1, region2) => {    
+    let path = `/api/v1/recommendation?region1=${region1}&region2=${region2}`
+    requestPath.set(path)
+
+    try {
+
+      const access_token = get(auth).Authorization
+
+      const options = {
+        path: path,
+        access_token: access_token
+      }
+
+      const getDatas = await getApi(options)
+      setPageInitialization()
+
+      const newData = {
+        content: getDatas.data.content,
+        totalPages: getDatas.data.totalPages,
+      }
+
+      update(datas => {
+        datas.data.content = newData.content
+        datas.data.totalPages = newData.totalPages
+        return datas
+      })
+
+      currentPlacePaginationBar.setPaginationBar(0, getDatas.data.totalPages)
+
+    }
+    catch(error) {
+      throw error
+    }
+
+  }
+
+  const fetchPlacesByPage = async (savedPath, pageNum) => {
+    let path = savedPath + `&page=${pageNum}`
+
+    try {
+
+      const access_token = get(auth).Authorization
+
+      const options = {
+        path: path,
+        access_token: access_token
+      }
+
+      const getDatas = await getApi(options)
+
+      const newData = {
+        content: getDatas.data.content,
+        totalPages: getDatas.data.totalPages,
+      }
+
+      update(datas => {
+        datas.data.content = newData.content
+        datas.data.totalPages = newData.totalPages
+        return datas
+      })
+
+      currentPlacePaginationBar.setPaginationBar(pageNum, getDatas.data.totalPages)
+      currentPlacesPage.setPage(pageNum)
+
+    }
+    catch(error) {
+      throw error
+    }
+
+  }
+
+  const resetPlaces = () => {
+    set({...initValues})
+    currentPlacesPage.resetPage()
+  }
+
+  return {
+    subscribe,
+    fetchPlaces,
+    fetchPlacesByPage,
+    resetPlaces,
+  }
+}
+
 export const currentPlacesPage = setCurrentPlacesPage();
 export const currentPlacePaginationBar = setCurrentPlacesPaginationBar();
 export const places = setPlaces();
+export const placeRecommendations = setPlaceRecommendations();
 export const requestPath = writable('')
 export const placeDetail = setPlaceDetail();
