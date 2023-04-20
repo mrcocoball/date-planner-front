@@ -25,7 +25,7 @@
 
   const goJoin = () => router.goto('/join')
 
-  const goBack = () => router.goto('/places')
+  const goBack = () => router.goto('/')
 
 </script>
 
