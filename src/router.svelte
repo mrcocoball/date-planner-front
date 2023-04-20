@@ -45,14 +45,14 @@
 
 {#if $isLogin}
   <Route path="/mypage"><MyPages /></Route>
-  <Route path="/mypage/reviews/*"><Reviews /></Route>
-  <Route path="/mypage/bookmarks/*"><Bookmarks /></Route>
-  <Route path="/mypage/plans/*"><Plans /></Route>
+  <Route path="/mypage/reviews/"><Reviews /></Route>
+  <Route path="/mypage/bookmarks/"><Bookmarks /></Route>
+  <Route path="/mypage/plans/"><Plans /></Route>
 {:else}
   <Route path="/mypage"><Login /></Route>
-  <Route path="/mypage/reviews/*"><Login /></Route>
-  <Route path="/mypage/bookmarks/*"><Login /></Route>
-  <Route path="/mypage/plans/*"><Login /></Route>
+  <Route path="/mypage/reviews/"><Login /></Route>
+  <Route path="/mypage/bookmarks/"><Login /></Route>
+  <Route path="/mypage/plans/"><Login /></Route>
 {/if}
 
 <Route path="/support"><Supports /></Route>
