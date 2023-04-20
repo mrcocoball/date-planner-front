@@ -4,8 +4,8 @@ import { getApi, postApi, delApi } from '../../service/api'
 
 // 페이지 초기화
 function setPageInitialization() {
-    currentPlacePaginationBar.resetPaginationBar()
-    currentPlacesPage.resetPage()
+  currentPlacePaginationBar.resetPaginationBar()
+  currentPlacesPage.resetPage()
 }
 
 // 현재 페이지 관련 store

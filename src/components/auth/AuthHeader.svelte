@@ -1,13 +1,22 @@
 <script>
   import { router } from 'tinro'
   import { auth, isLogin } from "../../store/auth/authStore"
-  import { places, placeRecommendations, currentPlacePaginationBar, currentPlacesPage } from "../../store/places/placeStore"
 
   const goLogin = () => router.goto('/login')
   const onLogout = () => auth.logout()
 
   const goPlace = () => router.goto('/')
   const goRecommendation = () => router.goto('/recommendation')
+
+  const goPlan = () => router.goto('/mypage/plans')
+  const goMyPage = () => router.goto('/mypage')
+  const goBookmark = () => router.goto('/mypage/bookmarks')
+  const goReivew = () => router.goto('/mypage/reviews')
+
+  const goSupport = () => router.goto('/support')
+  const goAnnouncement = () => router.goto('/support/announcements')
+  const goFaq = () => router.goto('/support/faq')
+  const goQna = () => router.goto('/support/qna')
 
 </script>
 
@@ -30,29 +39,25 @@
         </li>
         {#if $isLogin}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">플랜 짜기</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/mypage/plans">플랜 보기</a></li>
-              <li><a class="dropdown-item">플랜 작성</a></li>
-            </ul>
+            <a class="nav-link" href="" on:click={goPlan}>플랜</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">마이 페이지</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/mypage">내 프로필</a></li>
-              <li><a class="dropdown-item" href="/mypage/bookmarks">북마크한 장소</a></li>
-              <li><a class="dropdown-item" href="/mypage/reivews">내 리뷰</a></li>
-              <li><a class="dropdown-item" href="/mypage/plans">내 플랜</a></li>
+              <li><a class="dropdown-item" href="" on:click={goMyPage}>내 프로필</a></li>
+              <li><a class="dropdown-item" href="" on:click={goBookmark}>북마크한 장소</a></li>
+              <li><a class="dropdown-item" href="" on:click={goReivew}>내 리뷰</a></li>
+              <li><a class="dropdown-item" href="" on:click={goPlan}>내 플랜</a></li>
             </ul>
           </li>
         {/if}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/support">고객센터</a></li>
-            <li><a class="dropdown-item" href="/support/announcements">공지사항</a></li>
-            <li><a class="dropdown-item" href="/support/faq">FAQ</a></li>
-            <li><a class="dropdown-item" href="/support/qna">Q&A</a></li>
+            <li><a class="dropdown-item" href="" on:click={goSupport}>고객센터</a></li>
+            <li><a class="dropdown-item" href="" on:click={goAnnouncement}>공지사항</a></li>
+            <li><a class="dropdown-item" href="" on:click={goFaq}>FAQ</a></li>
+            <li><a class="dropdown-item" href="" on:click={goQna}>Q&A</a></li>
           </ul>
         </li>
       </ul>
