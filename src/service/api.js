@@ -10,6 +10,7 @@ const send = async ({method='', path='', data={}, access_token=''} = {}) => {
     "content-type": "application/json;charset=UTF-8",
     "accept": "application/json",
     "SameSite":"None",
+    "Secure":"True",
     "Authorization": "Bearer " + access_token,
   }
 
