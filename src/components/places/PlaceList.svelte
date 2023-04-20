@@ -1,10 +1,12 @@
 <script>
+  import { onDestroy } from 'svelte'
   import { places, placeDetail, requestPath, currentPlacesPage, currentPlacePaginationBar } from '../../store/places/placeStore.js'
   import PlaceMap from "../../components/places/PlaceMap.svelte";
   import PlaceThumb from './PlaceThumb.svelte';
   import PlaceDetail from './PlaceDetail.svelte';
 
   let detailMode = false
+  let searchMode = false
 
   let categories = [
     { 'id': 'AT4', 'name': '관광명소' },
@@ -22,6 +24,7 @@
   const searchPlaces = async () => {
     try {
       await places.fetchPlaces(initValues.formAddress, initValues.formCategories)
+      searchMode = true
     }
     catch(error) {
       alert(error.response.data.msg)
@@ -57,6 +60,15 @@
     }
   }
 
+  onDestroy(() => {
+    requestPath.set('')
+    places.resetPlaces()
+    placeDetail.resetPlace()
+    currentPlacePaginationBar.resetPaginationBar()
+    currentPlacesPage.resetPage()
+    searchMode = false
+  })
+
 </script>
 
 {#if detailMode}
@@ -74,6 +86,7 @@
   <button class="btn btn-search" on:click={searchPlaces}>검색하기</button>
 </div>
 
+{#if searchMode}
 <div class="place_list">
   <ul>
     {#each $places.data.content as place, index}
@@ -97,4 +110,5 @@
 <div class="place_map">
   <PlaceMap {places} />
 </div>
+{/if}
 {/if}

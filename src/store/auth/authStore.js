@@ -40,7 +40,7 @@ function setAuth() {
       const result = await postApi(options);
       set(result);
       isRefresh.set(true);
-      router.goto("/places");
+      router.goto("/");
     } catch (error) {
       alert(error.response.data.msg);
     }
@@ -54,7 +54,7 @@ function setAuth() {
       await delApi(options)
       set({...initValues})
       isRefresh.set(false)
-      router.goto('/places')
+      router.goto('/')
     }
     catch(error) {
       alert(error.response.data.msg);

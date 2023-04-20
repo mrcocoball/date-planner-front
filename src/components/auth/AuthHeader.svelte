@@ -1,9 +1,13 @@
 <script>
   import { router } from 'tinro'
   import { auth, isLogin } from "../../store/auth/authStore"
+  import { places, placeRecommendations, currentPlacePaginationBar, currentPlacesPage } from "../../store/places/placeStore"
 
   const goLogin = () => router.goto('/login')
   const onLogout = () => auth.logout()
+
+  const goPlace = () => router.goto('/')
+  const goRecommendation = () => router.goto('/recommendation')
 
 </script>
 
@@ -18,9 +22,10 @@
     <div class="collapse navbar-collapse" id="navbarsExample07">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">장소 검색</a>
+          <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">장소 검색</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/recommendation">추천 장소 검색</a></li>
+            <li><a class="dropdown-item" href="" on:click={goPlace}>장소 검색</a></li>
+            <li><a class="dropdown-item" href="" on:click={goRecommendation}>추천 장소 검색</a></li>
           </ul>
         </li>
         {#if $isLogin}

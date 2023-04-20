@@ -28,7 +28,9 @@
 </script>
 
 <!--추후 메인 페이지 컴포넌트 제작 시 연결-->
+<!--
 <Route path="/" redirect="/places"></Route>
+-->
 
 {#if !$isLogin}
   <Route path="/login"><Login /></Route>
@@ -38,7 +40,7 @@
   <Route path="/join"><NotFound /></Route>
 {/if}
 
-<Route path="/places"><Places /></Route>
+<Route path="/"><Places /></Route>
 <Route path="/recommendation"><Recommendation /></Route>
 
 {#if $isLogin}
