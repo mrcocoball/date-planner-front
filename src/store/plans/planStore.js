@@ -1,4 +1,4 @@
-import { writable, get, derived } from 'svelte/store'
+import { writable, get } from 'svelte/store'
 import { auth } from '../auth/authStore'
 import { getApi, postApi, putApi, delApi } from '../../service/api'
 
@@ -139,16 +139,91 @@ function setPlans() {
 
   }
 
+  const addPlan = async (title) => {
+    const access_token = get(auth).Authorization
+
+    try {
+
+      const options = {
+        path: "/api/v1/plans",
+        data: {
+          title: title,
+        },
+        access_token: access_token
+      }
+
+      const newPlan = await postApi(options)
+
+      update(datas => {
+        datas.data.content = [newPlan.data, ...datas.data.content]
+        return datas
+      })
+
+      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
+      //plans.resetPlans()
+
+      return
+
+    }
+    catch(error) {
+      throw error
+    }
+
+  }
+
   const resetPlans = () => {
     set({...initValues})
     currentPlansPage.resetPage()
+  }
+
+  // 수정 기능
+  const updatePlan = async(updatePlan) => {
+
+    update(datas => {
+      const newPlanList = datas.data.content.map(plan => {
+        if(plan.id === updatePlan.data.id) {
+          plan = updatePlan.data
+        }
+        return plan
+      })
+      datas.data.content = newPlanList
+      return datas
+    })
+
+  }
+
+  const deletePlan = async (id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/plans/${id}`,
+        access_token: access_token
+      }
+
+      await delApi(options)
+
+      update(datas => {
+        const newPlanList = datas.data.content.filter(plan => plan.id !== id)
+        datas.data.content = newPlanList
+        return datas
+      })
+
+    }
+    catch(error) {
+      alert('삭제 중에 오류가 발생하였습니다.')
+    }
   }
 
   return {
     subscribe,
     fetchPlans,
     fetchPlansByPage,
+    addPlan,
     resetPlans,
+    updatePlan,
+    deletePlan
   }
 }
 
@@ -216,17 +291,180 @@ function setPlanDetail() {
 
   }
 
+  // 수정 기능
+  const updatePlan = async(id, title, comment) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const updateData = {
+        id: id,
+        title: title,
+        comment: comment,
+      }
+
+      const options = {
+        path: `/api/v1/plans/${updateData.id}`,
+        data: {
+          title: updateData.title,
+          comment: updateData.comment
+        },
+        access_token: access_token,
+      }
+
+      const updatePlan = await putApi(options)
+
+      update(data => {
+        data.data.title = updatePlan.data.title
+        data.data.comment = updatePlan.data.comment
+        return data
+      })
+      plans.updatePlan(updatePlan)
+
+    }
+    catch(error) {
+      alert('수정 중에 오류가 발생하였습니다.')
+    }
+
+  }
+
+  const updateComment = async(id, title, comment) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const updateData = {
+        id: id,
+        title: title,
+        comment: comment,
+      }
+
+      const options = {
+        path: `/api/v1/plans/${updateData.id}`,
+        data: {
+          title: updateData.title,
+          comment: updateData.comment,
+        },
+        access_token: access_token,
+      }
+
+      const updatePlan = await putApi(options)
+
+      update(data => {
+        data.data.title = updatePlan.data.title
+        data.data.comment = updatePlan.data.comment
+        return data
+      })
+      plans.updatePlan(updatePlan)
+
+    }
+    catch(error) {
+      alert('수정 중에 오류가 발생하였습니다.')
+    }
+
+  }
+
+  const getDetailPlan = async (id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/detailPlans/${id}`,
+        access_token: access_token
+      }
+
+      const getData = await getApi(options)
+      set(getData)
+
+    }
+    catch(error) {
+      alert('오류가 발생했습니다. 다시 시도해주세요')
+    }
+
+  }
+
+  const resetDetailPlan = () => {
+    set({...initValues})
+  }
+
+  const addDetailPlan = async (place_id, plan_id, index) => {
+    const access_token = get(auth).Authorization
+
+    try {
+
+      const options = {
+        path: `/api/v1/detailPlans?planId=${plan_id}`,
+        data: {
+          ord: index,
+          pid: plan_id,
+          kpid: place_id
+        },
+        access_token: access_token
+      }
+
+      const newDetailPlan = await postApi(options)
+
+      update(datas => {
+        datas.data.detailPlans = [...datas.data.detailPlans, newDetailPlan.data]
+        return datas
+      })
+
+      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
+      //plans.resetPlans()
+
+      return
+
+    }
+    catch(error) {
+      throw error
+    }
+
+  }
+
+  const deleteDetailPlan = async (id) => {
+
+    const access_token = get(auth).Authorization
+
+    try {
+      const options = {
+        path: `/api/v1/detailPlans/${id}`,
+        access_token: access_token
+      }
+
+      await delApi(options)
+
+      update(datas => {
+        const newDetailPlanList = datas.data.detailPlans.filter(detailPlan => detailPlan.id !== id)
+        datas.data.detailPlans = newDetailPlanList
+        return datas
+      })
+
+    }
+    catch(error) {
+      alert('삭제 중에 오류가 발생하였습니다.')
+    }
+
+  }
+
   return {
     subscribe,
     getPlan,
     resetPlan,
+    updatePlan,
+    updateComment,
+    getDetailPlan,
+    addDetailPlan,
+    deleteDetailPlan,
+    resetDetailPlan,
     finished
   }
 
 }
 
+
 export const currentPlansPage = setCurrentPlansPage();
 export const currentPlanPaginationBar = setCurrentPlansPaginationBar();
 export const plans = setPlans();
-export const requestPath = writable('')
+export const requestPath = writable('');
 export const planDetail = setPlanDetail();
