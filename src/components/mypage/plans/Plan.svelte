@@ -6,5 +6,7 @@
 <div class="plan_thumb">
   <span>{index+1}</span>
   <span>{plan.title}</span>
-  <span>{plan.finished}</span>
+  {#if plan.finished}
+  <span>완료됨</span>
+  {/if}
 </div>

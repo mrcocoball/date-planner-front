@@ -3,9 +3,11 @@
   import { plans, planDetail, requestPath, currentPlanPaginationBar, currentPlansPage } from '../../../store/plans/planStore'
   import Plan from './Plan.svelte';
   import PlanDetail from './PlanDetail.svelte';
+  import PlanAddFrom from './PlanAddFrom.svelte';
 
   let detailMode = false
   let searchMode = true
+  let addMode = false
 
   let component
 
@@ -39,6 +41,14 @@
     planDetail.resetPlan()
   }
 
+  const onAddPlanMode = () => {
+    addMode = true
+  }
+
+  const offAddPlanMode = () => {
+    addMode = false
+  }
+
   const goPlanDetail = async (id) => {
     try {
       await planDetail.getPlan(id)
@@ -67,7 +77,18 @@
 </div>
 {:else}
 
-{#if searchMode}
+{#if !addMode}
+<div>
+  <button class="btn btn-create" on:click={onAddPlanMode}>플랜 작성</button>
+</div>
+{:else}
+<div>
+  <button class="btn btn-create" on:click={offAddPlanMode}>작성 취소</button>
+  <PlanAddFrom bind:addMode={addMode}/>
+</div>
+{/if}
+
+{#if searchMode && !addMode}
 <div class="plan_list" bind:this={component}>
   <ul>
     {#each $plans.data.content as plan, index}

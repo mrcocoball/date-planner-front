@@ -2,9 +2,11 @@
   import AuthHeader from "../../components/auth/AuthHeader.svelte";
   import PlaceList from "../../components/places/PlaceList.svelte";
 
+  let placeSearchMode = false
+
 </script>
 
 <AuthHeader />
 <main class="place-main">
-  <PlaceList />
+  <PlaceList {placeSearchMode} />
 </main>

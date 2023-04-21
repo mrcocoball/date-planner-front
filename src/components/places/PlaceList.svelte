@@ -1,9 +1,10 @@
 <script>
-  import { onDestroy } from 'svelte'
+  import { onDestroy, createEventDispatcher } from 'svelte'
   import { places, placeDetail, requestPath, currentPlacesPage, currentPlacePaginationBar } from '../../store/places/placeStore.js'
   import PlaceMap from "../../components/places/PlaceMap.svelte";
   import PlaceThumb from './PlaceThumb.svelte';
   import PlaceDetail from './PlaceDetail.svelte';
+  export let placeSearchMode
 
   let detailMode = false
   let searchMode = false
@@ -60,6 +61,15 @@
     }
   }
 
+  const dispatch = createEventDispatcher()
+
+  const sendAddress = (place_id, place_name) => {
+    dispatch('sendPlace_Id', {
+      placeId : place_id,
+      placeName : place_name,
+    })
+  }
+
   onDestroy(() => {
     requestPath.set('')
     places.resetPlaces()
@@ -93,6 +103,9 @@
       <li on:click={() => onDetailMode(place.place_id)}>
         <PlaceThumb {place} {index} />
       </li>
+      {#if placeSearchMode}
+      <button class="btn btn-search" on:click={() => sendAddress(place.place_id, place.place_name)}>목적지 선택</button>
+      {/if}
     {/each}
   </ul>
 </div>
