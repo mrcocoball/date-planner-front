@@ -1,9 +1,11 @@
 <script>
   import { afterUpdate, createEventDispatcher, onDestroy } from 'svelte'
-  import { auth, isLogin } from "../../store/auth/authStore";
+  import { isLogin } from "../../store/auth/authStore";
+  import { bookmarks } from '../../store/bookmarks/bookmarkStore'
   import ReviewInPlace from './ReviewInPlace.svelte';
   export let placeDetail
   export let detailMode
+  export let bookmarkSearchMode
 
   const dispatch = createEventDispatcher()
 
@@ -30,7 +32,8 @@
 
   const onBookmark = async () => {
     try {
-      await placeDetail.bookmark($placeDetail.data.place_id)
+      let getData = await placeDetail.bookmark($placeDetail.data.place_id)
+      bookmarks.addBookmark(getData)
     }
     catch(error) {
       alert(error.response.data.msg)
@@ -40,6 +43,7 @@
   const offBookmark = async () => {
     try {
       await placeDetail.cancelBookmark($placeDetail.data.place_id)
+      bookmarks.deleteBookmark($placeDetail.data.place_id)
     }
     catch(error) {
       alert(error.response.data.msg)
@@ -56,12 +60,14 @@
   <button class="btn btn-cancel" on:click={offDetailMode}>창 숨기기</button>
 </div>
 
+{#if !bookmarkSearchMode}
 {#if $isLogin}
   {#if $placeDetail.data.bookmarked}
     <button class="btn btn-cancel" on:click={offBookmark}>북마크 취소</button>
   {:else}
     <button class="btn btn-cancel" on:click={onBookmark}>북마크 하기</button>
   {/if}
+{/if}
 {/if}
 
 <div id="map" style="width:100%;height:350px;">

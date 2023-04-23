@@ -8,6 +8,7 @@
 
   let detailMode = false
   let searchMode = false
+  let bookmarkSearchMode = false
 
   let categories = [
     { 'id': 'AT4', 'name': '관광명소' },
@@ -84,7 +85,7 @@
 {#if detailMode}
 <div class="place_detail">
   {#if $placeDetail}
-    <PlaceDetail {placeDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
+    <PlaceDetail {placeDetail} {bookmarkSearchMode} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
