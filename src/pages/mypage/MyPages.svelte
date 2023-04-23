@@ -5,7 +5,7 @@
 
   const goPlans = () => router.goto('mypage/plans')
 
-  const goReviews = () => router.goto('mypage/reivews')
+  const goReviews = () => router.goto('mypage/reviews')
 
   const goBookmarks = () => router.goto('mypage/bookmarks')
 
