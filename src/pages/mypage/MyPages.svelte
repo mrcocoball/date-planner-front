@@ -3,11 +3,11 @@
   import { auth } from '../../store/auth/authStore'
   import { router } from 'tinro'
 
-  const goPlans = () => router.goto('mypage/plans')
+  const goPlans = () => router.goto('/mypage/plans')
 
-  const goReviews = () => router.goto('mypage/reviews')
+  const goReviews = () => router.goto('/mypage/reviews')
 
-  const goBookmarks = () => router.goto('mypage/bookmarks')
+  const goBookmarks = () => router.goto('/mypage/bookmarks')
 
 </script>
 
