@@ -58,6 +58,10 @@
 <Route path="/support"><Supports /></Route>
 <Route path="/support/annoucements"><Announcements /></Route>
 <Route path="/support/faq"><FaQs /></Route>
+{#if $isLogin}
 <Route path="/support/qna"><QnAs /></Route>
+{:else}
+<Route path="/support/qna"><Login /></Route>
+{/if}
 
 <Route fallback><NotFound /></Route>
