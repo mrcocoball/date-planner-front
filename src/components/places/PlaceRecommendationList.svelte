@@ -6,6 +6,7 @@
 
   let detailMode = false
   let searchMode = false
+  let bookmarkSearchMode = false
 
   let initValues = {
     formRegion1: '',
@@ -109,7 +110,7 @@
 {#if detailMode}
 <div class="place_detail">
   {#if $placeDetail}
-    <PlaceDetail {placeDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
+    <PlaceDetail {placeDetail} {bookmarkSearchMode} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
