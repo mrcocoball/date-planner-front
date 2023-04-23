@@ -1,4 +1,4 @@
-import { writable, get, derived } from 'svelte/store'
+import { writable, get } from 'svelte/store'
 import { auth } from '../auth/authStore'
 import { getApi, postApi, delApi } from '../../service/api'
 
@@ -223,6 +223,8 @@ function setPlaceDetail() {
         data.data.bookmarked = true
         return data
       })
+
+      return getData
     }
     catch(error) {
       alert('오류가 발생했습니다. 다시 시도해주세요')

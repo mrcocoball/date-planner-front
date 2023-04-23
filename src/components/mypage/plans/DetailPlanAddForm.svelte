@@ -1,6 +1,7 @@
 <script>
   import { planDetail } from '../../../store/plans/planStore'
   import PlaceList from '../../places/PlaceList.svelte';
+  import BookmarkList from '../bookmarks/BookmarkList.svelte';
   export let planDetailInfo
   export let inputDetailPlanValue
 
@@ -8,30 +9,35 @@
   let searchMode = false
   let bookmarkMode = false
   let placeSearchMode = false
+  let bookmarkSearchMode = false
 
   const onSearchMode = () => {
     searchMode = true
     bookmarkMode = false
     place_id = ''
     placeSearchMode = true
+    bookmarkSearchMode = false
   }
 
   const offSearchMode = () => {
     searchMode = false
     place_id = ''
     placeSearchMode = false
+    bookmarkSearchMode = false
   }
 
   const onBookmarkMode = () => {
     bookmarkMode = true
     searchMode = false
     place_id = ''
+    bookmarkSearchMode = true
     placeSearchMode = false
   }
 
   const offBookmarkMode = () => {
     bookmarkMode = false
     place_id = ''
+    bookmarkSearchMode = false
     placeSearchMode = false
   }
 
@@ -45,7 +51,7 @@
     const placeName = event.detail.placeName
     inputDetailPlanValue.formPlace_id = placeId
     inputDetailPlanValue.formPlace_name = placeName
-    offSearchMode()
+    offMode()
   }
 
 </script>
@@ -65,6 +71,7 @@
     <PlaceList bind:placeSearchMode={placeSearchMode} on:sendPlace_Id={sendingPlaceId} />
   {:else}
   <!--bookmarkMode-->
+    <BookmarkList bind:bookmarkSearchMode={bookmarkSearchMode} on:sendPlace_Id={sendingPlaceId} />
   {/if}
   <div>
     <button class="btn btn-cancel" on:click={offMode}>검색 취소</button>
