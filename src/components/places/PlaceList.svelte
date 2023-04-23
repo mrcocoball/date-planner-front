@@ -2,7 +2,7 @@
   import { onDestroy, createEventDispatcher } from 'svelte'
   import { places, placeDetail, requestPath, currentPlacesPage, currentPlacePaginationBar } from '../../store/places/placeStore.js'
   import PlaceMap from "../../components/places/PlaceMap.svelte";
-  import PlaceThumb from './PlaceThumb.svelte';
+  import Place from './Place.svelte';
   import PlaceDetail from './PlaceDetail.svelte';
   export let placeSearchMode
 
@@ -102,7 +102,7 @@
   <ul>
     {#each $places.data.content as place, index}
       <li on:click={() => onDetailMode(place.place_id)}>
-        <PlaceThumb {place} {index} />
+        <Place {place} {index} />
       </li>
       {#if placeSearchMode}
       <button class="btn btn-search" on:click={() => sendAddress(place.place_id, place.place_name)}>목적지 선택</button>
