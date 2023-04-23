@@ -90,7 +90,7 @@
   <button class="btn btn-search" on:click={searchAnnouncements}>검색하기</button>
 </div>
 
-<div class="place_list">
+<div class="announcement_list">
   <ul>
     {#each $announcements.data.content as announcement, index}
       <li on:click={() => onDetailMode(announcement.id)}>
