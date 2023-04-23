@@ -1,5 +1,5 @@
 <script>
-  import { onMount, afterUpdate, onDestroy } from 'svelte'
+  import { onMount, onDestroy } from 'svelte'
   import { plans, planDetail, requestPath, currentPlanPaginationBar, currentPlansPage } from '../../../store/plans/planStore'
   import Plan from './Plan.svelte';
   import PlanDetail from './PlanDetail.svelte';
