@@ -281,6 +281,9 @@ function setPlaceRecommendations() {
   const { subscribe, update, set } = writable({...initValues})
 
   const fetchPlaces = async (region1, region2) => {    
+    if (region1 == '제주') {
+      region1 = region1 + '특별자치도'
+    }
     let path = `/api/v1/recommendation?region1=${region1}&region2=${region2}`
     requestPath.set(path)
 

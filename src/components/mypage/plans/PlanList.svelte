@@ -3,7 +3,7 @@
   import { plans, planDetail, requestPath, currentPlanPaginationBar, currentPlansPage } from '../../../store/plans/planStore'
   import Plan from './Plan.svelte';
   import PlanDetail from './PlanDetail.svelte';
-  import PlanAddFrom from './PlanAddFrom.svelte';
+  import PlanAddForm from './PlanAddForm.svelte';
 
   let detailMode = false
   let searchMode = true
@@ -84,7 +84,7 @@
 {:else}
 <div>
   <button class="btn btn-create" on:click={offAddPlanMode}>작성 취소</button>
-  <PlanAddFrom bind:addMode={addMode}/>
+  <PlanAddForm bind:addMode={addMode}/>
 </div>
 {/if}
 
