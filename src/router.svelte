@@ -6,6 +6,9 @@
   import Login from './pages/auth/Login.svelte';
   import Join from './pages/auth/Join.svelte';
 
+  // 메인 페이지
+  import Main from './pages/Main.svelte';
+
   // 장소 관련
   import Places from './pages/places/Places.svelte';
   import Recommendation from './pages/places/Recommendation.svelte';
@@ -40,7 +43,8 @@
   <Route path="/join"><NotFound /></Route>
 {/if}
 
-<Route path="/"><Places /></Route>
+<Route path="/"><Main /></Route>
+<Route path="/places"><Places /></Route>
 <Route path="/recommendation"><Recommendation /></Route>
 
 {#if $isLogin}
