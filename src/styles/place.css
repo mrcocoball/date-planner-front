@@ -289,5 +289,5 @@ div.place-information-empty {
   min-height: 510px;
   background-image: url('../images/place-background.png'); 
   background-repeat: no-repeat; 
-  background-position: top;
+  background-position: bottom;
 }
