@@ -56,27 +56,33 @@
 </script>
 
 {#if detailMode}
-<div class="review_detail">
+<div class="my-review-detail">
   <ReviewDetail {myReviewDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
 </div>
 {:else}
-<div class="review_list">
-  <ul>
-    {#each $myReviews.data.content as review, index}
-      <li on:click={() => onDetailMode(review.id)}>
-        <Review {review} {index} />
-      </li>
-    {/each}
+<div class="my-review-list-header">
+  <h4>리뷰 목록</h4>
+  <span>여러분이 작성한 리뷰 목록입니다.</span>
+</div>
+<div class="my-review-list">
+  {#each $myReviews.data.content as review, index}
+  <ul class="list-group">
+    <li class="list-group-item my-review-thumb-item" on:click={() => onDetailMode(review.id)}>
+      <Review {review} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
 
-<div class="review_pagination">
-  <ul>
-    {#each $currentMyReviewPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentMyReviewsPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<nav id="pagination" aria-label="Page navigation">
+  <div class="review_pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentMyReviewPaginationBar as pageButton}
+        <li class={pageButton === $currentMyReviewsPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
 {/if}

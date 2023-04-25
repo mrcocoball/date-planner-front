@@ -53,36 +53,97 @@
 
 </script>
 
-<div>
-  <button class="btn btn-cancel" on:click={offDetailMode}>창 숨기기</button>
+<div class="detail-top-button">
+  <button class="btn-close" on:click={offDetailMode} aria-label="Close"></button>
 </div>
 
-<div>
-  <h4>장소명 : {$myReviewDetail.data.placeName}</h4>
-  <p>장소 URL : {$myReviewDetail.data.placeUrl}</p>
-  <p>작성일자 : {$myReviewDetail.data.createdAt}</p>
+<div class="review-place-information">
+  <div class="review-place-information-header">
+    <h4>리뷰 장소 정보</h4>
+    <span>리뷰가 작성된 장소의 정보입니다.</span>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h6>장소명</h6>
+      <div>
+        <span>{$myReviewDetail.data.placeName}</span>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h6>장소 URL(카카오맵)</h6>
+      <div>
+        <span>{$myReviewDetail.data.placeUrl}</span>
+      </div>
+    </li>
+  </ul>
 </div>
 
 {#if editMode}
-<div>
-  <div>
-    <input type="text" name="title" placeholder="제목을 입력해주세요" bind:value={initValues.formTitle}/>
+<div class="review-information">
+  <div class="review-information-header">
+    <h4>리뷰 정보 수정</h4>
+    <span>제목과 내용을 수정할 수 있습니다.</span>
   </div>
-  <div>
-    <textarea id="description" name="description" placeholder="내용을 입력해주세요" rows="5" bind:value={initValues.formDescription}></textarea>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div>
+        <h6>제목</h6>
+        <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={initValues.formTitle}/>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <h6>내용</h6>
+        <textarea id="description" class="form-control" name="description" placeholder="내용을 입력해주세요" rows="5" bind:value={initValues.formDescription}></textarea>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div>
+        <h6>평점</h6>
+        <input type="range" class="form-control" name="reviewScore" min=0 max=5 bind:value={initValues.formReviewScore}/>
+      </div>
+    </li>
+  </ul>
+  <div class="detail-bottom-button">
+    <button class="btn btn-update" on:click={() => onUpdateReview($myReviewDetail.data.id, initValues.formTitle, initValues.formDescription, initValues.formReviewScore)}>수정</button>
+    <button class="btn btn-cancel" on:click={offEditMode}>취소하기</button>
   </div>
-  <div>
-    <input type="range" name="reviewScore" min=0 max=5 bind:value={initValues.formReviewScore}/>
-  </div>
-  <button class="btn btn-update" on:click={() => onUpdateReview($myReviewDetail.data.id, initValues.formTitle, initValues.formDescription, initValues.formReviewScore)}>수정</button>
-  <button class="btn btn-cancel" on:click={offEditMode}>취소하기</button>
 </div>
 {:else}
-<div>
-  <h6>제목 : {$myReviewDetail.data.title}</h6>
-  <textarea rows="5" readonly>{$myReviewDetail.data.description}</textarea>
-  <p>평점 : {$myReviewDetail.data.reviewScore}</p>
-  <button class="btn btn-update" on:click={onEditMode}>수정하기</button>
-  <button class="btn btn-delete" on:click={() => onDeleteReview($myReviewDetail.data.id)}>삭제하기</button>
+<div class="review-information">
+  <div class="review-information-header">
+    <h4>리뷰 정보</h4>
+    <span>작성된 리뷰 정보이며 수정 및 삭제할 수 있습니다.</span>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h6>제목</h6>
+      <div>
+        <span>{$myReviewDetail.data.title}</span>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h6>내용</h6>
+      <div>
+        <pre>{$myReviewDetail.data.description}</pre>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h6>평점</h6>
+      <div>
+        <span>{$myReviewDetail.data.reviewScore}점</span>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <h6>작성일자</h6>
+      <div>
+        <span>{$myReviewDetail.data.createdAt}</span>
+      </div>
+    </li>
+  </ul> 
+  <div class="detail-bottom-button">
+    <button class="btn btn-update" on:click={onEditMode}>수정하기</button>
+    <button class="btn btn-delete" on:click={() => onDeleteReview($myReviewDetail.data.id)}>삭제하기</button>
+  </div>
 </div>
 {/if}
