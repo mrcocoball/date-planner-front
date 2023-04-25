@@ -69,32 +69,40 @@
 </script>
 
 {#if detailMode}
-<div class="place_detail">
+<div class="place-detail">
   <PlaceDetail {placeDetail} bind:bookmarkSearchMode={bookmarkSearchMode} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
 </div>
-{/if}
-
+{:else}
 {#if searchMode}
-<div class="bookmark_list">
-  <ul>
-    {#each $bookmarks.data.content as bookmark, index}
-      <li on:click={() => onDetailMode(bookmark.placeId)}>
-        <Bookmark {bookmark} {index} />
-      </li>
-      {#if bookmarkSearchMode}
-      <button class="btn btn-search" on:click={() => sendAddress(bookmark.placeId, bookmark.placeName)}>목적지 선택</button>
-      {/if}
-    {/each}
+{#if !bookmarkSearchMode}
+<div class="bookmark-list-header">
+  <h4>북마크 목록</h4>
+  <span>여러분이 북마크한 장소들의 목록입니다. 추후 플랜 작성 시 사용할 수 있습니다.</span>
+</div>
+{/if}
+<div class="bookmark-list">
+  {#each $bookmarks.data.content as bookmark, index}
+  <ul class="list-group">
+    <li class="list-group-item bookmark-thumb-item" on:click={() => onDetailMode(bookmark.placeId)}>
+      <Bookmark {bookmark} {index} />
+    </li>
+    {#if bookmarkSearchMode}
+    <button class="btn btn-search" on:click={() => sendAddress(bookmark.placeId, bookmark.placeName)}>목적지 선택</button>
+    {/if}
   </ul>
+  {/each}
 </div>
 
-<div class="bookmark_pagination">
-  <ul>
-    {#each $currentBookmarkPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentBookmarksPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<nav id="pagination" aria-label="Page navigation">
+  <div class="bookmark-pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentBookmarkPaginationBar as pageButton}
+        <li class={pageButton === $currentBookmarksPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
+{/if}
 {/if}
