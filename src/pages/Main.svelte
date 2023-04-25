@@ -1,5 +1,6 @@
 <script>
-  import AuthHeader from "../components/auth/AuthHeader.svelte";
+  import Footer from "../components/Footer.svelte";
+import AuthHeader from "../components/auth/AuthHeader.svelte";
   import { router } from 'tinro'
 
   const goPlaces = () => router.goto('/places')
@@ -8,7 +9,7 @@
 </script>
 
 <AuthHeader />
-<main class="container-fluid index_main">
+<main class="container-fluid index-main">
   <div class="index_header">
     <h1>오늘 어디에서 만날까?</h1>
     <h1>이 이야기만 들으면 막막하시다구요?</h1>
@@ -53,5 +54,6 @@
         <a class="btn btn-search" href="" on:click={goPlans}>플랜 짜기</a>
       </div>
     </div>
-  </div>  
+  </div>
+  <Footer />  
 </main>

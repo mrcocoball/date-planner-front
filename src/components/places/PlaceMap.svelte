@@ -1,5 +1,5 @@
 <script>
-  import { afterUpdate, onMount } from 'svelte'
+  import { afterUpdate } from 'svelte'
   export let places
 
   function makeOverListener(map, marker, infowindow) {
@@ -34,7 +34,7 @@
       var mapContainer = document.getElementById('map'),
       mapOption = { 
           center: new kakao.maps.LatLng(total_y, total_x),
-          level: 3
+          level: 7
       }
 
       var map = new kakao.maps.Map(mapContainer, mapOption);
