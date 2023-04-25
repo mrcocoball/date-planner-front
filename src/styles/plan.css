@@ -1,6 +1,9 @@
 div.plan-list {
   margin-top: 30px;
   min-height: 500px;
+  background-image: url('../images/plan-background.png'); 
+  background-repeat: no-repeat; 
+  background-position: top;
 }
 
 li.plan-thumb-item {

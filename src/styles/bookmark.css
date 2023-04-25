@@ -1,0 +1,17 @@
+div.bookmark-list {
+  margin-top: 30px;
+  min-height: 571px;
+  background-image: url('../images/bookmark-background.png'); 
+  background-repeat: no-repeat; 
+  background-position: top;
+}
+
+li.bookmark-thumb-item {
+  margin-bottom: 5px;
+}
+
+div.bookmark-sub {
+  font-size: smaller;
+  text-align: right;
+  vertical-align: middle;
+}

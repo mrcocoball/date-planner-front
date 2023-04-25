@@ -3,6 +3,7 @@ import './styles/button.css'
 import './styles/layout.css'
 import './styles/place.css'
 import './styles/plan.css'
+import './styles/bookmark.css'
 import { auth } from './store/auth/authStore'
 
 await auth.refresh()
