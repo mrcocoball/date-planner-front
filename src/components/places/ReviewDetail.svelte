@@ -6,6 +6,7 @@
   import ReviewEditForm from './ReviewEditForm.svelte';
 
   let isViewMenu = false
+  let editMode = false
 
   // 반응성 블록
   $ : {
@@ -17,16 +18,9 @@
     }
   }
 
-  const onToggleMenuPopup = (id) => {
-    if(isViewMenu === true) {
-      reviews.closeMenuPopup()
-      return
-    }
-    reviews.openMenuPopup(id)
-  }
-
   const onEditModeReview = (id) => {
     reviews.openEditModeReview(id)
+    editMode = true
   }
 
   const onDeleteReview = (id) => {
@@ -39,25 +33,23 @@
 {#if $reviews.editMode === review.id}
   <ReviewEditForm {review} />
 {:else}
-<div class="review_detail">
-  <p>작성자 : {review.nickname}</p>
-  <p>평점 : {review.reviewScore}</p>
-  <p>제목 : {review.title}</p>
-  <p>내용 : {review.description}</p>
-  <p>작성일 : {review.createdAt}</p>
-  <p>수정일 : {review.modifiedAt}</p>
+<div class="review-thumb">
+  <div class="review-default">
+    <span>평점 : {review.reviewScore}</span>
+    <h5>{review.title}</h5>
+    <pre>{review.description}</pre>
+  </div>
+  <div class="review-sub">
+    <span>{review.nickname}</span>
+    <br>
+    <span class="review-date">작성일 : {review.createdAt}</span>
+    <span class="review-date">수정일 : {review.modifiedAt}</span>
+  </div>
 </div>
-<div class="content-box-header-inner-right">
-  {#if review.uid === $auth.uid}
-    <button class="button-base-circle" on:click={() => onToggleMenuPopup(review.id)}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
-    </button>
-    <div class="drop-menu-box" class:block={isViewMenu}> <!-- block이라는 css class 필요 -->
-      <ul>
-        <li><button href="" class="drop-menu-button" on:click={() => onEditModeReview(review.id)}>수정</button></li>
-        <li><button href="" class="drop-menu-button" on:click={() => onDeleteReview(review.id)}>삭제</button></li>
-      </ul>              
-    </div>
-  {/if}
+{#if review.uid === $auth.uid}
+<div class="detail-bottom-button">
+  <button class="btn btn-update" on:click={() => onEditModeReview(review.id)}>수정하기</button>
+  <button class="btn btn-delete" on:click={() => onDeleteReview(review.id)}>삭제하기</button>
 </div>
+{/if}
 {/if}
