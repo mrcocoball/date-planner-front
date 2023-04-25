@@ -69,6 +69,8 @@
   const setPage = async (pageNum) => {
     try {
       await placeRecommendations.fetchPlacesByPage($requestPath, pageNum)
+      let element = document.getElementById("main_nav")
+      element.scrollIntoView();
     }
     catch(error) {
       alert(error.response.data.msg)
@@ -108,44 +110,59 @@
 
 {#key detailMode}
 {#if detailMode}
-<div class="place_detail">
+<div class="place-detail">
   {#if $placeDetail}
     <PlaceDetail {placeDetail} {bookmarkSearchMode} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
-<div class="place_search_form">
-  {#each region1s as region1, index}
-  <button type="button" on:click={() => setRegion1(region1, index)} class={selectedRegion1 != '' && index === Number(selectedRegion1) ? 'btn btn-create' : 'btn btn-cancel'}>{region1}</button>
-  {/each}
-  <div>
-  {#each region2btns as region2, index}
-  <button type="button" on:click={() => setRegion2(region2, index)} class={selectedRegion2 != '' && index === Number(selectedRegion2) ? 'btn btn-create' : 'btn btn-cancel'}>{region2}</button>
-  {/each}
+<div class="place-search-form">
+  <div class="place-search-form-header">
+    <h4>추천 장소 검색하기</h4>
+    <span>지역을 선택하면 평점순 상위 50위까지의 장소를 확인할 수 있습니다!</span>
+    <div class="detail-top-button">
+      <button class="btn btn-search" on:click={searchPlaceRecommendations}>검색하기</button>
+    </div>
   </div>
-  <button class="btn btn-search" on:click={searchPlaceRecommendations}>검색하기</button>
+  <div class="place-search-bar-region1">
+    <div class="place-search-bar-region1-labels">
+      {#each region1s as region1, index}
+      <label on:click={() => setRegion1(region1, index)} class={selectedRegion1 != '' && index === Number(selectedRegion1) ? 'region1-selected' : 'region1'}>{region1}</label>
+      {/each}
+    </div>
+  </div>
+  <div class="place-search-bar-region2">
+    <div class="place-search-bar-region2-labels">
+      {#each region2btns as region2, index}
+      <label on:click={() => setRegion2(region2, index)} class={selectedRegion2 != '' && index === Number(selectedRegion2) ? 'region2-selected' : 'region2'}>{region2}</label>
+      {/each}
+    </div>
+  </div>
 </div>
 
+<div class={searchMode ? "place-information" : "place-information-empty"}>
 {#if searchMode}
-<div class="place_recommendation_list">
-  <ul>
-    {#each $placeRecommendations.data.content as place, index}
-      <li on:click={() => onDetailMode(place.place_id)}>
-        <PlaceRecommendation {place} {index} />
-      </li>
-    {/each}
+<div class="place-recommendation-list">
+  {#each $placeRecommendations.data.content as place, index}
+  <ul class="list-group">
+    <li class="list-group-item place-thumb-item" on:click={() => onDetailMode(place.place_id)}>
+      <PlaceRecommendation {place} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
-
-<div class="place_pagination">
-  <ul>
-    {#each $currentPlacePaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentPlacesPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+  <nav id="pagination" aria-label="Page navigation">
+    <div class="place-pagination">
+      <ul class="pagination justify-content-center">
+        {#each $currentPlacePaginationBar as pageButton}
+          <li class={pageButton === $currentPlacesPage ? "page-item active" : "page-item"} aria-current="page">
+            <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  </nav>
 {/if}
+</div>
 {/if}
 {/key}
