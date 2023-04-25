@@ -48,6 +48,36 @@
   color: aliceblue;
 }
 
+.btn-hide {
+  background-color: rgb(37, 53, 58);
+  color: aliceblue;
+}
+
+.btn-hide:hover {
+  background-color: rgb(67, 68, 68);
+  color: aliceblue;
+}
+
+.btn-bookmark {
+  background-color: rgb(41, 37, 58);
+  color: aliceblue;
+}
+
+.btn-bookmark:hover {
+  background-color: rgb(41, 37, 58);
+  color: aliceblue;
+}
+
+.btn-bookmarked {
+  background-color: rgb(70, 63, 104);
+  color: aliceblue;
+}
+
+.btn-bookmarked:hover {
+  background-color: rgb(70, 63, 104);
+  color: aliceblue;
+}
+
 .back_list_button {
   margin-top: 10px;
 }

@@ -1,6 +1,7 @@
 import App from './App.svelte'
 import './styles/button.css'
 import './styles/layout.css'
+import './styles/place.css'
 import { auth } from './store/auth/authStore'
 
 await auth.refresh()
