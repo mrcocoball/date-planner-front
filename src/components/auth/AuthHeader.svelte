@@ -47,9 +47,9 @@
             <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown" aria-expanded="false">마이 페이지</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="" on:click={goMyPage}>내 프로필</a></li>
+              <li><a class="dropdown-item" href="" on:click={goPlan}>내 플랜</a></li>
               <li><a class="dropdown-item" href="" on:click={goBookmark}>북마크한 장소</a></li>
               <li><a class="dropdown-item" href="" on:click={goReivew}>내 리뷰</a></li>
-              <li><a class="dropdown-item" href="" on:click={goPlan}>내 플랜</a></li>
             </ul>
           </li>
         {/if}

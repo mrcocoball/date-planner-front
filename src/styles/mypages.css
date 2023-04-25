@@ -1,0 +1,33 @@
+.mypages-main {
+  min-width: 400px; 
+  max-width: 1300px; 
+  padding-top: 20px; 
+  padding-left: 40px; 
+  padding-right: 40px;
+  border: 1px solid #c4c4c4;
+  background-color: white;
+}
+
+.mypages-header {
+  margin-bottom: 42px;
+}
+
+.mypages-box {
+  margin-bottom: 5px;
+}
+
+img.profile-img {
+  background-image: url('../images/profile-background-thumb.png'); 
+}
+
+img.plan-img {
+  background-image: url('../images/plan-background-thumb.png'); 
+}
+
+img.bookmark-img {
+  background-image: url('../images/bookmark-background-thumb.png'); 
+}
+
+img.review-img {
+  background-image: url('../images/review-background-thumb.png'); 
+}
