@@ -1,0 +1,74 @@
+div.plan-list {
+  margin-top: 30px;
+  min-height: 500px;
+}
+
+li.plan-thumb-item {
+  margin-bottom: 5px;
+}
+
+div.plan-thumb {
+  justify-content: space-between !important;
+  display: flex !important;
+}
+
+div.plan-sub {
+  font-size: smaller;
+  text-align: right;
+  vertical-align: middle;
+}
+
+span.plan-title {
+  font-size: large;
+  font-weight: 500;
+}
+
+span.plan-finished {
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #200069;
+  border: 1px solid #200069;
+  border-radius: 5px / 5px;
+}
+
+div.detailplan-thumb {
+  justify-content: space-between !important;
+  display: flex !important;
+}
+
+div.detail-plan {
+  margin-top: 30px;
+}
+
+div.plan-comment-form-header {
+  margin-bottom: 10px;
+}
+
+div.plan-comment {
+  margin-top: 30px;
+}
+
+div.plan-comment-empty {
+  margin-top: 30px;
+}
+
+li.detail-plan-list-empty-box {
+  min-height: 331px;
+}
+
+div.detail-plan-form-mode-information {
+  margin-top: 30px;
+}
+
+li.detailplan-mode-item {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+div.detail-plan-selected-header {
+  margin-bottom: 20px;
+}
