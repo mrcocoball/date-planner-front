@@ -86,10 +86,12 @@
 </div>
 {:else}
 <div class="place-search-form">
+  {#if !placeSearchMode}
   <div class="place-search-form-header">
     <h4>장소 검색하기</h4>
     <span>카테고리 태그와 주소를 입력하여 검색해보세요!</span>
   </div>
+  {/if}
   <input type="checkbox" value="AT4" id="cb1" bind:group={initValues.formCategories} />
   <label for="cb1">관광명소</label>
   <input type="checkbox" value="CE7" id="cb2" bind:group={initValues.formCategories} />
@@ -118,10 +120,10 @@
       <ul class="list-group">
         <li class="list-group-item place-thumb-item" on:click={() => onDetailMode(place.place_id)}>
           <Place {place} {index} />
+          {#if placeSearchMode}
+          <button class="btn btn-search" on:click={() => sendAddress(place.place_id, place.place_name)}>목적지 선택</button>
+          {/if}
         </li>
-        {#if placeSearchMode}
-        <button class="btn btn-search" on:click={() => sendAddress(place.place_id, place.place_name)}>목적지 선택</button>
-        {/if}
       </ul>  
       {/each}
       <nav id="pagination" aria-label="Page navigation">

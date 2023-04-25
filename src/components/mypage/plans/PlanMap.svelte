@@ -37,24 +37,30 @@
           level: 5
       }
 
-      var map = new kakao.maps.Map(mapContainer, mapOption);
+      // 컴포넌트 해제된 상태에서 map을 생성하려 할 경우 오류 발생하므로 분기 처리
+      if (mapContainer) {
 
-      for (var i = 0; i < positions.length; i++) {
-        let latlng = new kakao.maps.LatLng(positions[i].latitude, positions[i].longitude)
-        var marker = new kakao.maps.Marker({
-            map: map,
-            position: latlng
-        })
+        var map = new kakao.maps.Map(mapContainer, mapOption);
 
-        // TODO : 커스텀 마커 추후 구현 필요
-        var infowindow = new kakao.maps.InfoWindow({
-            content: '<div>' + Number(i+1) + '</div>'
-        })
+        for (var i = 0; i < positions.length; i++) {
+          let latlng = new kakao.maps.LatLng(positions[i].latitude, positions[i].longitude)
+          var marker = new kakao.maps.Marker({
+              map: map,
+              position: latlng
+          })
 
-        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+          // TODO : 커스텀 마커 추후 구현 필요
+          var infowindow = new kakao.maps.InfoWindow({
+              content: '<div>' + Number(i+1) + '</div>'
+          })
+
+          kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+          kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+        }  
+
+      }
       
-      }        
     }
   })
 </script>

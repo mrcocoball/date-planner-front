@@ -10,9 +10,12 @@
   }
 </script>
 
-<div class="detailPlan_thumb">
-  <span>{index+1}</span>
-  <span>{detailPlan.placeName}</span>
-  <span>{detailPlan.addressName}</span>
-  <button type="button" class="btn btn-delete" on:click={() => onDeleteReview(detailPlan.id)}>삭제</button>
+<div class="detailplan-thumb">
+  <div class="detailplan-default">
+    <h6>{index+1} {detailPlan.placeName}</h6>
+    <span>{detailPlan.addressName}</span>
+  </div>
+  <div class="detailplan-sub">
+    <button type="button" class="btn btn-delete" on:click={() => onDeleteReview(detailPlan.id)}>삭제</button>
+  </div>
 </div>

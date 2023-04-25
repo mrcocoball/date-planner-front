@@ -70,7 +70,7 @@
 </script>
 
 {#if detailMode}
-<div class="plan_detail">
+<div class="plan-detail">
   {#if $planDetail}
     <PlanDetail {planDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
@@ -78,35 +78,46 @@
 {:else}
 
 {#if !addMode}
-<div>
-  <button class="btn btn-create" on:click={onAddPlanMode}>플랜 작성</button>
+<div class="plan-add-form-header">
+  <h4>플랜 목록</h4>
+  <span>여러분만의 일정 플랜을 짜보세요. 장소를 검색하거나 북마크한 장소를 토대로 목적지를 체크하여 플랜을 짤 수 있습니다.</span>
+  <br>
+  <span>또한 플랜을 완료하셨다면 후기를 남길 수 있습니다!</span>
+</div>
+<div class="detail-top-button">
+  <button class="btn btn-create" on:click={onAddPlanMode}>플랜 작성해보기</button>
 </div>
 {:else}
-<div>
-  <button class="btn btn-create" on:click={offAddPlanMode}>작성 취소</button>
+<div class="plan-add-form-header">
+  <h4>플랜 작성</h4>
+  <span>플랜의 제목을 입력하세요. 그리고 만들어진 플랜을 클릭하여 목적지를 추가할 수 있습니다.</span>
+</div>
+<div class="plan-add-form">
   <PlanAddForm bind:addMode={addMode}/>
 </div>
 {/if}
 
-{#if searchMode && !addMode}
-<div class="plan_list" bind:this={component}>
-  <ul>
-    {#each $plans.data.content as plan, index}
-      <li on:click={() => onDetailMode(plan.id)}>
-        <Plan {plan} {index} />
-      </li>
-    {/each}
+{#if searchMode}
+<div class="plan-list" bind:this={component}>
+  {#each $plans.data.content as plan, index}
+  <ul class="list-group">
+    <li class="list-group-item plan-thumb-item" on:click={() => onDetailMode(plan.id)}>
+      <Plan {plan} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
 
-<div class="plan_pagination">
-  <ul>
-    {#each $currentPlanPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentPlansPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<nav id="pagination" aria-label="Page navigation">
+  <div class="plan-pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentPlanPaginationBar as pageButton}
+        <li class={pageButton === $currentPlansPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
 {/if}
 {/if}
