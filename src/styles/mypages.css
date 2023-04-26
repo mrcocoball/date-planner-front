@@ -1,15 +1,5 @@
-.mypages-main {
-  min-width: 400px; 
-  max-width: 1300px; 
-  padding-top: 20px; 
-  padding-left: 40px; 
-  padding-right: 40px;
-  border: 1px solid #c4c4c4;
-  background-color: white;
-}
-
 .mypages-header {
-  margin-bottom: 42px;
+  margin-bottom: 52px;
 }
 
 .mypages-box {

@@ -15,7 +15,7 @@ import AuthHeader from "../../components/auth/AuthHeader.svelte";
 <AuthHeader />
 <main class="container-fluid mypages-main">
   <div class="mypages-header">
-    <h1>마이 페이지</h1>
+    <h2>마이 페이지</h2>
     <p>프로필, 플랜, 북마크, 리뷰를 모아둔 페이지입니다.</p>
   </div>
   <div class="row mb-2">

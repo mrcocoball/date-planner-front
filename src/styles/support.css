@@ -1,0 +1,9 @@
+.supports-header {
+  margin-bottom: 52px;
+}
+
+div.announcement {
+  background-image: url('../images/announcement-thumb.png');
+  background-repeat: no-repeat; 
+  background-position: right; 
+}
