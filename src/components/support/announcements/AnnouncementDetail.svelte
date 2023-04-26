@@ -1,7 +1,21 @@
 <script>
-  import { onDestroy, createEventDispatcher } from 'svelte'
+  import { afterUpdate, onDestroy, createEventDispatcher } from 'svelte'
   export let announcementDetail
   export let detailMode
+
+  let category = ''
+
+  afterUpdate(() => {
+    if ($announcementDetail.data.categoryName == '일반') {
+      category = 'ct-acb1'
+    } else if ($announcementDetail.data.categoryName == '이벤트') {
+      category = 'ct-acb2'
+    } else if ($announcementDetail.data.categoryName == '업데이트') {
+      category = 'ct-acb3'
+    } else {
+      category = 'ct-acb4'
+    }
+  })
 
   const dispatch = createEventDispatcher()
 
@@ -16,30 +30,17 @@
 
 </script>
 
-<div>
-  <button class="btn btn-cancel" on:click={offDetailMode}>창 숨기기</button>
+<div class="detail-top-button">
+  <button class="btn-close" on:click={offDetailMode} aria-label="Close"></button>
 </div>
 
-<div class="col-md-7 col-lg-8 common_form">
-  <ul class="list-group mb-3">
+<div class="common-form">
+  <div class="announcement-detail-header">
+    <span class={category}>{$announcementDetail.data.categoryName}</span>
     <h2>{$announcementDetail.data.title}</h2>
-    <li class="list-group-item">
-      <div>
-        <h6>카테고리</h6>
-        <p class="categoryName" id="categoryName">{$announcementDetail.data.categoryName}</p>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div>
-        <h6>본문</h6>
-        <pre class="description" id="description">{$announcementDetail.data.description}</pre>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div>
-        <h6>작성일자</h6>
-        <p class="avgReviewScore" id="avgReviewScore">{$announcementDetail.data.createdAt}</p>
-      </div>
-    </li>
-  </ul>
+    <span>{$announcementDetail.data.createdAt}</span>
+  </div>
+  <div class="announcement-form">
+    <pre class="announcement-description">{$announcementDetail.data.description}</pre>
+  </div>
 </div>
