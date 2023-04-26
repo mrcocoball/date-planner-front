@@ -6,6 +6,7 @@ import './styles/plan.css'
 import './styles/bookmark.css'
 import './styles/review.css'
 import './styles/mypages.css'
+import './styles/support.css'
 import { auth } from './store/auth/authStore'
 
 await auth.refresh()
