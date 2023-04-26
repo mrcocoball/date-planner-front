@@ -32,14 +32,14 @@
     <div class="col-md-6">
       <div class="h-100 p-5 bg-body-tertiary border rounded-3">
         <h2>자주 묻는 질문</h2>
-        <p>여러분이 자주 질문해주시는 내용들을 모아두었습니다.</p>
+        <p>자주 질문해주시는 내용들을 모아두었습니다.</p>
         <button class="btn btn-search" on:click={goFaqs}>확인하기</button>
       </div>
     </div>
     <div class="col-md-6">
       <div class="h-100 p-5 bg-body-tertiary border rounded-3">
         <h2>질문 / 답변</h2>
-        <p>도움이 필요하신 내용에 대해 질문해주시면 도움을 드리겠습니다.</p>
+        <p>궁금하신 내용이 있으시다면 언제든지 물어보세요.</p>
         <button class="btn btn-search" on:click={goQnas}>확인하기</button>
       </div>
     </div>
