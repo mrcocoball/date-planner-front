@@ -19,7 +19,6 @@
 
   const searchAnnouncements = async () => {
     try {
-      console.log(initValues)
       await announcements.fetchAnnouncementsBySearch(initValues.formCategoryId, initValues.formCondition, initValues.formKeyword)
     }
     catch(error) {
@@ -67,46 +66,54 @@
 </script>
 
 {#if detailMode}
-<div class="announcement_detail">
+<div class="announcement-detail">
   {#if $announcementDetail}
     <AnnouncementDetail {announcementDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
-<div class="announcement_search_form">
-  <select bind:value={initValues.formCondition}>
+<div class="announcement-search-form-header">
+  <h2>공지사항</h2>
+  <span>공지사항과 이벤트, 업데이트와 관련된 소식들이 올라옵니다!</span>
+</div>
+<div class="announcement-search-form">
+  <select bind:value={initValues.formCondition} class="form-control condition">
     <option value="">검색</option>
     <option value="title">제목</option>
     <option value="description">본문</option>
   </select>
-  <select bind:value={initValues.formCategoryId}>
+  <select bind:value={initValues.formCategoryId} class="form-control category">
     <option value="">카테고리</option>
     <option value=1>일반</option>
     <option value=2>업데이트</option>
     <option value=3>이벤트</option>
     <option value=4>긴급</option>
   </select>
-  <input type="text" name="keyword" autocomplete="off" placeholder="검색어를 입력해주세요" bind:value={initValues.formKeyword} />
+  <input type="text" class="form-control keyword" name="keyword" autocomplete="off" placeholder="검색어를 입력해주세요" bind:value={initValues.formKeyword} />
+</div>
+<div class="detail-top-button">
   <button class="btn btn-search" on:click={searchAnnouncements}>검색하기</button>
 </div>
 
-<div class="announcement_list">
-  <ul>
-    {#each $announcements.data.content as announcement, index}
-      <li on:click={() => onDetailMode(announcement.id)}>
-        <Announcement {announcement} {index} />
-      </li>
-    {/each}
+<div class="announcement-list">
+  {#each $announcements.data.content as announcement, index}
+  <ul class="list-group">
+    <li class="list-group-item announcement-thumb-item" on:click={() => onDetailMode(announcement.id)}>
+      <Announcement {announcement} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
 
-<div class="announcement_pagination">
-  <ul>
-    {#each $currentAnnouncementPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentAnnouncementsPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<nav id="pagination" aria-label="Page navigation">
+  <div class="announcement-pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentAnnouncementPaginationBar as pageButton}
+        <li class={pageButton === $currentAnnouncementsPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
 {/if}
