@@ -23,7 +23,7 @@
 </script>
 
 <nav id="main_nav" class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
-  <div class="container">
+  <div class="container main-header">
     <a class="navbar-brand" href="" on:click={goMain}>Date Planner</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
             aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">

@@ -145,7 +145,13 @@ function setAnnouncements() {
   }
 
   const fetchAnnouncementsByPage = async (savedPath, pageNum) => {
-    let path = savedPath + `&page=${pageNum}`
+
+    let path = ''
+    if (savedPath.endsWith('announcements')) {
+      path = savedPath + `?page=${pageNum}`
+    } else {
+      path = savedPath + `&page=${pageNum}`
+    }
 
     try {
 

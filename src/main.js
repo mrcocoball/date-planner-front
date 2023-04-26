@@ -7,6 +7,7 @@ import './styles/bookmark.css'
 import './styles/review.css'
 import './styles/mypages.css'
 import './styles/support.css'
+import './styles/announcement.css'
 import { auth } from './store/auth/authStore'
 
 await auth.refresh()
