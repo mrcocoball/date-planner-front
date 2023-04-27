@@ -9,6 +9,7 @@ import './styles/mypages.css'
 import './styles/support.css'
 import './styles/announcement.css'
 import './styles/faq.css'
+import './styles/qna.css'
 import { auth } from './store/auth/authStore'
 
 await auth.refresh()

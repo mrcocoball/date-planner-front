@@ -1,0 +1,155 @@
+div.qna-list {
+  margin-top: 40px;
+  min-height: 514px;
+  background-image: url('../images/qna-background.png'); 
+  background-repeat: no-repeat; 
+  background-position: bottom;
+}
+
+span.ct-qcb1 {
+  display:inline-block;
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #22083f;
+  border: 1px solid #22083f;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb2 {
+  display:inline-block;
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #573f75;
+  border: 1px solid #573f75;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb3 {
+  display:inline-block;
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #2b168b;
+  border: 1px solid #2b168b;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb4 {
+  display:inline-block;
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #b10000;
+  border: 1px solid #b10000;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb5 {
+  display:inline-block;
+  text-align: center;
+  width: 110px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #522d2d;
+  border: 1px solid #522d2d;
+  border-radius: 5px / 5px;
+}
+
+span.qna-answered {
+  display:inline-block;
+  text-align: center;
+  width: 100px;
+  height: 20px;
+  font-size: smaller;
+  color:aliceblue;
+  background-color: #014b7c;
+  border: 1px solid #014b7c;
+  border-radius: 5px / 5px;
+}
+
+span.qna-date {
+  font-size: smaller;
+}
+
+li.qna-thumb-item {
+  margin-bottom: 5px;
+}
+
+li.ans-thumb-item {
+  margin-bottom: 5px;
+}
+
+div.qna-thumb {
+  justify-content: space-between !important;
+  display: flex !important;
+}
+
+div.qna-sub {
+  text-align: right;
+  vertical-align: middle;
+}
+
+select.qna-category {
+  width: 150px;
+}
+
+div.qna-detail-form {
+  margin-top: 30px;
+  min-height: 353px;
+}
+
+pre.qna-description {
+  font-size: large;
+  white-space: pre-wrap;
+}
+
+div.answer-add-form {
+  margin-top: 20px;
+}
+
+pre.ans-description {
+  margin-top: 5px;
+  font-size: large;
+  white-space: pre-wrap;
+}
+
+div.question-update-form-box {
+  margin-top: 20px;
+}
+
+div.question-add-form {
+  margin-top: 20px;
+}
+
+div.question-form-div {
+  margin-top: 7px;
+}
+
+div.answer-thumb {
+  padding-top: 5px;
+  padding-left: 5px;
+  justify-content: space-between !important;
+  display: flex !important;
+}
+
+span.nickname-admin {
+  display:inline-block;
+  text-align: center;
+  width: 60px;
+  height: 25px;
+  color:aliceblue;
+  background-color: #00263f;
+  border: 1px solid #00263f;
+  border-radius: 5px / 5px;
+}
