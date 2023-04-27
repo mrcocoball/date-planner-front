@@ -88,7 +88,7 @@
 <div class="place-search-form">
   {#if !placeSearchMode}
   <div class="place-search-form-header">
-    <h4>장소 검색하기</h4>
+    <h2>장소 검색하기</h2>
     <span>카테고리 태그와 주소를 입력하여 검색해보세요!</span>
   </div>
   {/if}
@@ -101,7 +101,7 @@
   <input type="checkbox" value="FD6" id="cb4" bind:group={initValues.formCategories} />
   <label for="cb4">음식점</label>
   <input type="checkbox" value="SW8" id="cb5" bind:group={initValues.formCategories} />
-  <label for="cb5">지하철</label>
+  <label for="cb5">지하철역</label>
   <div class="place-search-bar">
     <input type="text" class="form-control address-input" name="address" placeholder="주소를 입력해주세요 (예 : 서울시 관악구 / 서초동)" autocomplete="off" bind:value={initValues.formAddress} />
     <button class="btn btn-search" on:click={searchPlaces}>검색</button>
@@ -126,19 +126,19 @@
         </li>
       </ul>  
       {/each}
-      <nav id="pagination" aria-label="Page navigation">
-        <div class="place-pagination">
-          <ul class="pagination justify-content-center">
-            {#each $currentPlacePaginationBar as pageButton}
-              <li class={pageButton === $currentPlacesPage ? "page-item active" : "page-item"} aria-current="page">
-                <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-              </li>
-            {/each}
-          </ul>
-        </div>
-      </nav>
     </div>
   </div>
+  <nav id="pagination" aria-label="Page navigation">
+    <div class="place-pagination">
+      <ul class="pagination justify-content-center">
+        {#each $currentPlacePaginationBar as pageButton}
+          <li class={pageButton === $currentPlacesPage ? "page-item active" : "page-item"} aria-current="page">
+            <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  </nav>
   {/if}
 </div>
 {/if}

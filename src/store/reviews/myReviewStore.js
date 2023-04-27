@@ -222,7 +222,6 @@ function setMyReviewDetail() {
       }
 
       const getData = await getApi(options)
-      console.log(getData)
       set(getData)
 
     }

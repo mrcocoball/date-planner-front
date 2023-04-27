@@ -34,6 +34,13 @@ span.plan-finished {
   border-radius: 5px / 5px;
 }
 
+span.plan-finished-l {
+  color:aliceblue;
+  background-color: #200069;
+  border: 1px solid #200069;
+  border-radius: 5px / 5px;
+}
+
 div.detailplan-thumb {
   justify-content: space-between !important;
   display: flex !important;
@@ -74,4 +81,9 @@ li.detailplan-mode-item {
 
 div.detail-plan-selected-header {
   margin-bottom: 20px;
+}
+
+pre.plan-description {
+  margin-top: 5px;
+  white-space: pre-wrap;
 }

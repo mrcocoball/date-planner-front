@@ -147,26 +147,25 @@
 </div>
 
 <div class="common-form">
-  <ul class="list-group">
-    <li class="list-group-item">
-      <div>
-        <h6>플랜 이름</h6>
-        {#if !editMode}
-        <p class="categoryName" id="categoryName">{$planDetail.data.title}</p>
-        <div class="detail-bottom-button">
-          <button class="btn btn-update" on:click={onEditMode}>제목 수정</button>
-          <button class="btn btn-delete" on:click={() => onDeletePlan($planDetail.data.id)}>삭제하기</button>
-        </div>
-        {:else}
-        <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={titleValues.formTitle}/>
-        <div class="detail-bottom-button">
-          <button class="btn btn-update" on:click={() => onUpdatePlan($planDetail.data.id, titleValues.formTitle)}>수정</button>
-          <button class="btn btn-cancel" on:click={offEditMode}>취소하기</button>
-        </div>
-        {/if}
-      </div>
-    </li>
-  </ul>
+  <div>
+    {#if !editMode}
+    {#if $planDetail.data.finished}
+    <span class="plan-finished-l">완료됨</span>
+    {/if}
+    <h2>{$planDetail.data.title}</h2>
+    <div class="detail-bottom-button">
+      <button class="btn btn-update" on:click={onEditMode}>제목 수정</button>
+      <button class="btn btn-delete" on:click={() => onDeletePlan($planDetail.data.id)}>삭제하기</button>
+    </div>
+    {:else}
+    <h6>플랜 이름</h6>
+    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={titleValues.formTitle}/>
+    <div class="detail-bottom-button">
+      <button class="btn btn-update" on:click={() => onUpdatePlan($planDetail.data.id, titleValues.formTitle)}>수정</button>
+      <button class="btn btn-cancel" on:click={offEditMode}>취소하기</button>
+    </div>
+    {/if}
+  </div>
 </div>
 
 <div class="plan-map">
@@ -250,7 +249,7 @@
   </div>
   <ul class="list-group">
     <li class="list-group-item">
-      <pre>{$planDetail.data.comment}</pre>
+      <pre class="plan-description">{$planDetail.data.comment}</pre>
     </li>
   </ul>
   <div class="detail-bottom-button">

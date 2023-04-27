@@ -26,6 +26,6 @@
 
 {#if answerMode}
 <div>
-  <pre>{favoriteAnswer.description}</pre>
+  <pre class="faq-answer-description">{favoriteAnswer.description}</pre>
 </div>
 {/if}

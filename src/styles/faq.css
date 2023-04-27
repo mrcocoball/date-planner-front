@@ -28,3 +28,7 @@ div.faq-answer-thumb {
   justify-content: space-between !important;
   display: flex !important;
 }
+
+pre.faq-answer-description {
+  white-space: pre-wrap;
+}

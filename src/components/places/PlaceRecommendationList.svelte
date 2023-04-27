@@ -118,11 +118,8 @@
 {:else}
 <div class="place-search-form">
   <div class="place-search-form-header">
-    <h4>추천 장소 검색하기</h4>
+    <h2>추천 장소 검색하기</h2>
     <span>지역을 선택하면 평점순 상위 50위까지의 장소를 확인할 수 있습니다!</span>
-    <div class="detail-top-button">
-      <button class="btn btn-search" on:click={searchPlaceRecommendations}>검색하기</button>
-    </div>
   </div>
   <div class="place-search-bar-region1">
     <div class="place-search-bar-region1-labels">
@@ -137,6 +134,9 @@
       <label on:click={() => setRegion2(region2, index)} class={selectedRegion2 != '' && index === Number(selectedRegion2) ? 'region2-selected' : 'region2'}>{region2}</label>
       {/each}
     </div>
+  </div>
+  <div class="detail-top-button">
+    <button class="w-100 btn btn-search" on:click={searchPlaceRecommendations}>검색하기</button>
   </div>
 </div>
 
