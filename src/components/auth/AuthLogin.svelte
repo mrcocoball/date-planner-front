@@ -30,6 +30,7 @@
 </script>
 
 <main class="form-signin w-100 m-auto">
+  <div class="login-img"></div>
   <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
   <div class="form-floating">
     <input type="email" class="form-control" name="email" id="floatingInput" placeholder="이메일" autocomplete="off" bind:value={values.formEmail}>
@@ -41,8 +42,12 @@
   </div>
 
   <button class="w-100 btn btn-lg btn-primary" on:click={onLogin}>로그인</button>
-  <span>아이디가 없으신가요?</span>
-  <button class="w-100 btn btn-lg btn-create" on:click={goJoin}>회원가입</button>
-  <button class="w-100 btn btn-lg btn-cancel" on:click={goBack}>취소</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2023 Cocoball Enterprise</p>
+  <div class="login-footer">
+    <span>혹시 아이디가 없으신가요?</span>
+    <div class="login-footer-button">
+      <button class="w-100 btn btn-lg btn-create" on:click={goJoin}>회원가입</button>
+      <button class="w-100 btn btn-lg btn-cancel" on:click={goBack} style="margin-top: 10px;">취소</button>
+    </div>
+  </div>
+  <p class="mt-5 mb-3 text-muted">&copy; 2023 Cocoball Factory</p>
 </main>
