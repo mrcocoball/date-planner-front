@@ -78,7 +78,7 @@
 </div>
 <div class="announcement-search-form">
   <select bind:value={initValues.formCondition} class="form-control condition">
-    <option value="">검색</option>
+    <option value="">검색조건</option>
     <option value="title">제목</option>
     <option value="description">본문</option>
   </select>

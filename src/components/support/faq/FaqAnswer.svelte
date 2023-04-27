@@ -11,9 +11,17 @@
 
 </script>
 
-<div>
-  <span>{favoriteAnswer.title}</span>
-  <button class="btn btn-cancel" on:click={answerModeToggle}>펼치기</button>
+<div class="faq-answer-thumb">
+  <div class="faq-answer-default">
+    <h5>{favoriteAnswer.title}</h5>
+  </div>
+  <div class="faq-answer-sub">
+    {#if answerMode}
+    <button class="btn btn-cancel" on:click={answerModeToggle}>접기</button>
+    {:else}
+    <button class="btn btn-search" on:click={answerModeToggle}>펼치기</button>
+    {/if}
+  </div>
 </div>
 
 {#if answerMode}
