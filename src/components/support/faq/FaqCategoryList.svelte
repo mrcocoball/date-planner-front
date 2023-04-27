@@ -51,29 +51,39 @@
 </script>
 
 {#if detailMode}
-<div class="faq_detail">
+<div class="faq-detail">
   {#if $faqDetail}
     <FaqCategoryDetail bind:faqDetailId={$faqDetail.data.id} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
-<div class="faq_list">
-  <ul>
-    {#each $faqs.data.content as faq, index}
-      <li on:click={() => onDetailMode(faq.id)}>
-        <FaqCategory {faq} {index} />
-      </li>
-    {/each}
+<div class="faq-list-form-header">
+  <h2>자주 묻는 질문</h2>
+  <span>여러분이 자주 질문해주시는 내용들을 모았습니다.</span>
+  <br>
+  <span>리스트에 없는 내용의 경우 Q&A를 통해 질문을 남겨주세요!</span>
+</div>
+<div class="faq-list">
+  {#each $faqs.data.content as faq, index}
+  <ul class="list-group">
+    <li class="list-group-item faq-thumb-item" on:click={() => onDetailMode(faq.id)}>
+      <FaqCategory {faq} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
 
-<div class="faq_pagination">
-  <ul>
-    {#each $currentFaqPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentFaqsPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<!--
+<nav id="pagination" aria-label="Page navigation"></nav>
+  <div class="faq-pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentFaqPaginationBar as pageButton}
+        <li class={pageButton === $currentFaqsPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
+-->
 {/if}
