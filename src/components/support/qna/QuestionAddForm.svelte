@@ -30,9 +30,10 @@
 
 </script>
 
-<div class="question_add_form">
-  <div>
-    <select bind:value={values.formCategoryId}>
+<div class="question-add-form">
+  <div class="question-form-div">
+    <h6>카테고리</h6>
+    <select class="form-control qna-category" bind:value={values.formCategoryId}>
       <option value="" disabled>카테고리 선택</option>
       <option value=1>장소 관련 문의</option>
       <option value=2>계정 관련 문의</option>
@@ -41,15 +42,17 @@
       <option value=5>기타 문의</option>
     </select>
   </div>
-  <div>
-    <input type="text" name="title" placeholder="제목을 입력해주세요" bind:value={values.formTitle}/>
+  <div class="question-form-div">
+    <h6>제목</h6>
+    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={values.formTitle}/>
   </div>
-  <div>
-    <textarea name="description" rows="5" placeholder="내용을 입력해주세요" bind:value={values.formDescription}/>
+  <div class="question-form-div">
+    <h6>내용</h6>
+    <textarea class="form-control" name="description" rows="15" placeholder="내용을 입력해주세요" bind:value={values.formDescription}/>
   </div>
 </div>
 
-<div>
+<div class="detail-bottom-button">
   <button class="btn btn-create" on:click={onAddQuestion}>입력</button>
   <button class="btn btn-cancel" on:click={onCancelAddQuestion}>취소</button>
 </div>
