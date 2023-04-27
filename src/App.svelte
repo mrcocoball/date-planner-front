@@ -18,6 +18,4 @@
 
 </script>
 
-<div class="main-container">
-  <Router />
-</div>
+<Router />
