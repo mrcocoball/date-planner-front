@@ -29,15 +29,15 @@
 
   afterUpdate(() => {
     if ($qnaDetail.data.categoryId == 1) {
-      category = 'ct-qcb1'
+      category = 'ct-qcb1-l'
     } else if ($qnaDetail.data.categoryId == 2) {
-      category = 'ct-qcb2'
+      category = 'ct-qcb2-l'
     } else if ($qnaDetail.data.categoryId == 3) {
-      category = 'ct-qcb3'
+      category = 'ct-qcb3-l'
     } else if ($qnaDetail.data.categoryId == 4) {
-      category = 'ct-qcb4'
+      category = 'ct-qcb4-l'
     } else {
-      category = 'ct-qcb5'
+      category = 'ct-qcb5-l'
     }
   })
 

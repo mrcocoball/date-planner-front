@@ -69,6 +69,50 @@ span.ct-acb4 {
   border-radius: 5px / 5px;
 }
 
+span.ct-acb1-l {
+  display:inline-block;
+  text-align: center;
+  width: 70px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #22083f;
+  border: 1px solid #22083f;
+  border-radius: 5px / 5px;
+}
+
+span.ct-acb2-l {
+  display:inline-block;
+  text-align: center;
+  width: 70px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #573f75;
+  border: 1px solid #573f75;
+  border-radius: 5px / 5px;
+}
+
+span.ct-acb3-l {
+  display:inline-block;
+  text-align: center;
+  width: 70px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #2b168b;
+  border: 1px solid #2b168b;
+  border-radius: 5px / 5px;
+}
+
+span.ct-acb4-l {
+  display:inline-block;
+  text-align: center;
+  width: 70px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #b10000;
+  border: 1px solid #b10000;
+  border-radius: 5px / 5px;
+}
+
 li.announcement-thumb-item {
   margin-bottom: 5px;
 }
@@ -91,4 +135,5 @@ div.announcement-form {
 
 pre.announcement-description {
   font-size: large;
+  white-space: pre-wrap;
 }

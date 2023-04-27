@@ -1,4 +1,5 @@
 <script>
+  import { afterUpdate } from 'svelte'
   export let review
   export let index
   import { auth } from '../../store/auth/authStore'
@@ -7,6 +8,24 @@
 
   let isViewMenu = false
   let editMode = false
+
+  let reviewStar = ''
+
+  afterUpdate(() => {
+    if (review.reviewScore < 1) {
+      reviewStar = `☆☆☆☆☆`
+    } else if (review.reviewScore >= 1 && review.reviewScore < 2) {
+      reviewStar = `★☆☆☆☆`
+    } else if (review.reviewScore >= 2 && review.reviewScore < 3) {
+      reviewStar = `★★☆☆☆`
+    } else if (review.reviewScore >= 3 && review.reviewScore < 4) {
+      reviewStar = `★★★☆☆`
+    } else if (review.reviewScore >= 4 && review.reviewScore < 5) {
+      reviewStar = `★★★★☆`
+    } else {
+      reviewStar = `★★★★★`
+    }
+  })
 
   // 반응성 블록
   $ : {
@@ -35,15 +54,16 @@
 {:else}
 <div class="review-thumb">
   <div class="review-default">
-    <span>평점 : {review.reviewScore}</span>
+    <span class="review-score">{reviewStar}</span>
     <h5>{review.title}</h5>
-    <pre>{review.description}</pre>
+    <pre class="review-description">{review.description}</pre>
   </div>
   <div class="review-sub">
     <span>{review.nickname}</span>
     <br>
-    <span class="review-date">작성일 : {review.createdAt}</span>
-    <span class="review-date">수정일 : {review.modifiedAt}</span>
+    <span class="review-date">작성일자 : {review.createdAt}</span>
+    <br>
+    <span class="review-date">수정일자 : {review.modifiedAt}</span>
   </div>
 </div>
 {#if review.uid === $auth.uid}

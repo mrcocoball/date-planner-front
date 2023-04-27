@@ -7,6 +7,9 @@
   export let detailMode
   export let bookmarkSearchMode
 
+  let category = ''
+  let reviewScoreStar = ''
+
   const dispatch = createEventDispatcher()
 
   const offDetailMode = () => {
@@ -15,6 +18,33 @@
   }
 
   afterUpdate(() => {
+
+    if ($placeDetail.data.avg_review_score < 1) {
+      reviewScoreStar = `☆☆☆☆☆`
+    } else if ($placeDetail.data.avg_review_score >= 1 && $placeDetail.data.avg_review_score < 2) {
+      reviewScoreStar = `★☆☆☆☆`
+    } else if ($placeDetail.data.avg_review_score >= 2 && $placeDetail.data.avg_review_score < 3) {
+      reviewScoreStar = `★★☆☆☆`
+    } else if ($placeDetail.data.avg_review_score >= 3 && $placeDetail.data.avg_review_score < 4) {
+      reviewScoreStar = `★★★☆☆`
+    } else if ($placeDetail.data.avg_review_score >= 4 && $placeDetail.data.avg_review_score < 5) {
+      reviewScoreStar = `★★★★☆`
+    } else {
+      reviewScoreStar = `★★★★★`
+    }
+
+    if ($placeDetail.data.category_name == '관광명소') {
+      category = 'ct-cb1-l'
+    } else if ($placeDetail.data.category_name == '카페') {
+      category = 'ct-cb2-l'
+    } else if ($placeDetail.data.category_name == '문화시설') {
+      category = 'ct-cb3-l'
+    } else if ($placeDetail.data.category_name == '음식점') {
+      category = 'ct-cb4-l'
+    } else {
+      category = 'ct-cb5-l'
+    }
+
     var mapContainer = document.getElementById('map'),
     mapOption = { 
         center: new kakao.maps.LatLng($placeDetail.data.y, $placeDetail.data.x),
@@ -63,6 +93,11 @@
   <button class="btn-close" on:click={offDetailMode} aria-label="Close"></button>
 </div>
 
+<div class="place-detail-header">
+  <span class={category}>{$placeDetail.data.category_name}</span>
+  <h2>{$placeDetail.data.place_name}</h2>
+</div>
+
 <div id="map" style="width:100%;height:350px;">
   
 </div>
@@ -81,18 +116,6 @@
     <ul class="list-group mb-3">
       <li class="list-group-item">
         <div>
-          <h6>장소명</h6>
-          <span class="placeName" id="placeName">{$placeDetail.data.place_name}</span>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div>
-          <h6>카테고리</h6>
-          <span class="categoryName" id="categoryName">{$placeDetail.data.category_name}</span>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div>
           <h6>주소(지번 주소)</h6>
           <span class="addressName" id="addressName">{$placeDetail.data.address_name}</span>
         </div>
@@ -100,7 +123,8 @@
       <li class="list-group-item">
         <div>
           <h6>리뷰 평점 / 리뷰 건수</h6>
-          <span class="reviewCount" id="reviewCount">{$placeDetail.data.avg_review_score} / {$placeDetail.data.review_count} 건</span>
+          <span class="review-score" id="reviewCount">{reviewScoreStar}</span>
+          <span>({$placeDetail.data.avg_review_score}) / {$placeDetail.data.review_count} 건</span>
         </div>
       </li>
       {#if $placeDetail.data.description}

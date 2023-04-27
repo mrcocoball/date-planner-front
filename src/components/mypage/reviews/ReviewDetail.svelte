@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy, createEventDispatcher } from 'svelte'
+  import { afterUpdate, onDestroy, createEventDispatcher } from 'svelte'
   import { myReviews } from '../../../store/reviews/myReviewStore'
   export let myReviewDetail
   export let detailMode
@@ -11,6 +11,26 @@
     formDescription: '',
     formReviewScore: 0
   }
+
+  let reviewScoreStar = ''
+
+  afterUpdate(() => {
+
+    if ($myReviewDetail.data.reviewScore < 1) {
+      reviewScoreStar = `☆☆☆☆☆`
+    } else if ($myReviewDetail.data.reviewScore >= 1 && $myReviewDetail.data.reviewScore < 2) {
+      reviewScoreStar = `★☆☆☆☆`
+    } else if ($myReviewDetail.data.reviewScore >= 2 && $myReviewDetail.data.reviewScore < 3) {
+      reviewScoreStar = `★★☆☆☆`
+    } else if ($myReviewDetail.data.reviewScore >= 3 && $myReviewDetail.data.reviewScore < 4) {
+      reviewScoreStar = `★★★☆☆`
+    } else if ($myReviewDetail.data.reviewScore >= 4 && $myReviewDetail.data.reviewScore < 5) {
+      reviewScoreStar = `★★★★☆`
+    } else {
+      reviewScoreStar = `★★★★★`
+    }
+
+  })
 
   const dispatch = createEventDispatcher()
 
@@ -125,13 +145,14 @@
     <li class="list-group-item">
       <h6>내용</h6>
       <div>
-        <pre>{$myReviewDetail.data.description}</pre>
+        <pre class="review-description">{$myReviewDetail.data.description}</pre>
       </div>
     </li>
     <li class="list-group-item">
       <h6>평점</h6>
       <div>
-        <span>{$myReviewDetail.data.reviewScore}점</span>
+        <span class="review-score">{reviewScoreStar}</span>
+        <span>({$myReviewDetail.data.reviewScore}점)</span>
       </div>
     </li>
     <li class="list-group-item">

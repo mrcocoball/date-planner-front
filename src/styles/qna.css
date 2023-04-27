@@ -9,7 +9,7 @@ div.qna-list {
 span.ct-qcb1 {
   display:inline-block;
   text-align: center;
-  width: 110px;
+  width: 100px;
   height: 20px;
   font-size: smaller;
   color:aliceblue;
@@ -21,7 +21,7 @@ span.ct-qcb1 {
 span.ct-qcb2 {
   display:inline-block;
   text-align: center;
-  width: 110px;
+  width: 100px;
   height: 20px;
   font-size: smaller;
   color:aliceblue;
@@ -33,7 +33,7 @@ span.ct-qcb2 {
 span.ct-qcb3 {
   display:inline-block;
   text-align: center;
-  width: 110px;
+  width: 100px;
   height: 20px;
   font-size: smaller;
   color:aliceblue;
@@ -45,7 +45,7 @@ span.ct-qcb3 {
 span.ct-qcb4 {
   display:inline-block;
   text-align: center;
-  width: 110px;
+  width: 100px;
   height: 20px;
   font-size: smaller;
   color:aliceblue;
@@ -57,9 +57,64 @@ span.ct-qcb4 {
 span.ct-qcb5 {
   display:inline-block;
   text-align: center;
-  width: 110px;
+  width: 100px;
   height: 20px;
   font-size: smaller;
+  color:aliceblue;
+  background-color: #522d2d;
+  border: 1px solid #522d2d;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb1-l {
+  display:inline-block;
+  text-align: center;
+  width: 120px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #22083f;
+  border: 1px solid #22083f;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb2-l {
+  display:inline-block;
+  text-align: center;
+  width: 120px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #573f75;
+  border: 1px solid #573f75;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb3-l {
+  display:inline-block;
+  text-align: center;
+  width: 120px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #2b168b;
+  border: 1px solid #2b168b;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb4-l {
+  display:inline-block;
+  text-align: center;
+  width: 120px;
+  height: 26px;
+  color:aliceblue;
+  background-color: #b10000;
+  border: 1px solid #b10000;
+  border-radius: 5px / 5px;
+}
+
+span.ct-qcb5-l {
+  display:inline-block;
+  text-align: center;
+  width: 120px;
+  height: 26px;
   color:aliceblue;
   background-color: #522d2d;
   border: 1px solid #522d2d;
@@ -120,7 +175,6 @@ div.answer-add-form {
 
 pre.ans-description {
   margin-top: 5px;
-  font-size: large;
   white-space: pre-wrap;
 }
 

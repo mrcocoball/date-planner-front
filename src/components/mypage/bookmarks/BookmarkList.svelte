@@ -76,7 +76,7 @@
 {#if searchMode}
 {#if !bookmarkSearchMode}
 <div class="bookmark-list-header">
-  <h4>북마크 목록</h4>
+  <h2>북마크 목록</h2>
   <span>여러분이 북마크한 장소들의 목록입니다. 추후 플랜 작성 시 사용할 수 있습니다.</span>
 </div>
 {/if}

@@ -7,13 +7,13 @@
 
   afterUpdate(() => {
     if ($announcementDetail.data.categoryName == '일반') {
-      category = 'ct-acb1'
+      category = 'ct-acb1-l'
     } else if ($announcementDetail.data.categoryName == '이벤트') {
-      category = 'ct-acb2'
+      category = 'ct-acb2-l'
     } else if ($announcementDetail.data.categoryName == '업데이트') {
-      category = 'ct-acb3'
+      category = 'ct-acb3-l'
     } else {
-      category = 'ct-acb4'
+      category = 'ct-acb4-l'
     }
   })
 
