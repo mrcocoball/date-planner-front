@@ -1,0 +1,30 @@
+div.faq-list-header {
+  margin-bottom: 10px;
+}
+
+div.faq-list {
+  margin-top: 40px;
+  min-height: 548px;
+}
+
+li.faq-thumb-item {
+  margin-bottom: 15px;
+}
+
+div.faq-answer-header {
+  margin-bottom: 10px;
+}
+
+div.faq-answer-list {
+  margin-top: 40px;
+  min-height: 513px;
+}
+
+li.faq-answer-thumb-item {
+  margin-bottom: 15px;
+}
+
+div.faq-answer-thumb {
+  justify-content: space-between !important;
+  display: flex !important;
+}
