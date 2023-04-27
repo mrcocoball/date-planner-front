@@ -61,7 +61,7 @@
 </div>
 {:else}
 <div class="my-review-list-header">
-  <h4>리뷰 목록</h4>
+  <h2>리뷰 목록</h2>
   <span>여러분이 작성한 리뷰 목록입니다.</span>
 </div>
 <div class="my-review-list">
