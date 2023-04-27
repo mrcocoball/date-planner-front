@@ -42,12 +42,8 @@
     }
   }
 
-  const onAddPlanMode = () => {
+  const onAddQuestionMode = () => {
     addMode = true
-  }
-
-  const offAddPlanMode = () => {
-    addMode = false
   }
 
   onDestroy(() => {
@@ -61,43 +57,51 @@
 </script>
 
 {#if detailMode}
-<div class="qna_detail">
+<div class="qna-detail">
   {#if $qnaDetail}
     <QuestionDetail {qnaDetail} bind:detailMode={detailMode} on:detail-off={offDetailMode} />
   {/if}
 </div>
 {:else}
-
 {#if !addMode}
-<div>
-  <button class="btn btn-create" on:click={onAddPlanMode}>질문 작성</button>
+<div class="qna-list-header">
+  <h2>질문과 답변</h2>
+  <span>궁금하신 내용에 대해 언제든지 질문해주세요!</span>
+</div>
+<div class="detail-top-button">
+  <button class="btn btn-create" on:click={onAddQuestionMode}>질문 작성</button>
 </div>
 {:else}
-<div>
-  <button class="btn btn-create" on:click={offAddPlanMode}>작성 취소</button>
+<div class="qna-list-header">
+  <h2>질문 작성</h2>
+  <span>내용을 작성해주시면 최대한 빠르게 답변해드리겠습니다!</span>
+</div>
+<div class="question-add-form">
   <QuestionAddForm bind:addMode={addMode}/>
 </div>
 {/if}
 
 {#if !addMode}
-<div class="qna_list">
-  <ul>
-    {#each $qnas.data.content as qna, index}
-      <li on:click={() => onDetailMode(qna.id)}>
-        <Question {qna} {index} />
-      </li>
-    {/each}
+<div class="qna-list">
+  {#each $qnas.data.content as qna, index}
+  <ul class="list-group">
+    <li class="list-group-item qna-thumb-item" on:click={() => onDetailMode(qna.id)}>
+      <Question {qna} {index} />
+    </li>
   </ul>
+  {/each}
 </div>
 
-<div class="qna_pagination">
-  <ul>
-    {#each $currentQnaPaginationBar as pageButton}
-      <li>
-        <a class={pageButton === $currentQnasPage ? "btn-page-active" : "btn-page"} href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
-      </li>
-    {/each}
-  </ul>
-</div>
+<nav id="pagination" aria-label="Page navigation">
+  <div class="qna-pagination">
+    <ul class="pagination justify-content-center">
+      {#each $currentQnaPaginationBar as pageButton}
+        <li class={pageButton === $currentQnasPage ? "page-item active" : "page-item"} aria-current="page">
+          <a class="page-link" href="" on:click={() => setPage(pageButton)}>{pageButton+1}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
 {/if}
 {/if}

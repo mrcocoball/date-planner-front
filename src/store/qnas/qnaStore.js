@@ -330,11 +330,8 @@ function setQnaDetail() {
 
       const newAnswer = await postApi(options)
 
-      console.log('newAnswer', newAnswer)
-
       update(datas => {
         datas.data.answers = [...datas.data.answers, newAnswer.data]
-        console.log('updated', datas.data.answers)
         return datas
       })
 
