@@ -2,18 +2,6 @@
   import { afterUpdate } from 'svelte'
   export let planDetail
 
-  function makeOverListener(map, marker, infowindow) {
-    return function() {
-        infowindow.open(map, marker);
-    }
-  }
-
-  function makeOutListener(infowindow) {
-      return function() {
-          infowindow.close();
-      }
-  }
-
   afterUpdate(() => {
     if ($planDetail.data.detailPlans.length != 0) {
 
@@ -44,18 +32,20 @@
 
         for (var i = 0; i < positions.length; i++) {
           let latlng = new kakao.maps.LatLng(positions[i].latitude, positions[i].longitude)
-          var marker = new kakao.maps.Marker({
+
+          let index = (i+1).toString()
+          if (i <= 8) index = 0 + index
+          let overlayNum = index.slice(-1)
+
+          var content = '<div class="plan-overlay-' + overlayNum + '"><h6 class="overlay-number">' + index + '</h6></div>'
+
+          var customOverlay = new kakao.maps.CustomOverlay({
               map: map,
-              position: latlng
-          })
+              position: latlng,
+              content: content   
+          });
 
-          // TODO : 커스텀 마커 추후 구현 필요
-          var infowindow = new kakao.maps.InfoWindow({
-              content: '<div>' + Number(i+1) + '</div>'
-          })
-
-          kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-          kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+          customOverlay.setMap(map)
 
         }  
 

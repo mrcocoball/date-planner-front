@@ -7,7 +7,6 @@
   export let detailMode
   export let bookmarkSearchMode
 
-  let category = ''
   let reviewScoreStar = ''
 
   const dispatch = createEventDispatcher()
@@ -33,23 +32,16 @@
       reviewScoreStar = `★★★★★`
     }
 
-    if ($placeDetail.data.category_name == '관광명소') {
-      category = 'ct-cb1-l'
-    } else if ($placeDetail.data.category_name == '카페') {
-      category = 'ct-cb2-l'
-    } else if ($placeDetail.data.category_name == '문화시설') {
-      category = 'ct-cb3-l'
-    } else if ($placeDetail.data.category_name == '음식점') {
-      category = 'ct-cb4-l'
-    } else {
-      category = 'ct-cb5-l'
-    }
-
     var mapContainer = document.getElementById('map'),
     mapOption = { 
         center: new kakao.maps.LatLng($placeDetail.data.y, $placeDetail.data.x),
-        level: 2
+        level: 1
     }
+
+    var imageSrc = `/src/images/markers/solo-marker-${$placeDetail.data.category_group_id}.png`,   
+        imageSize = new kakao.maps.Size(100, 100)
+      
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
 
     // 컴포넌트 해제된 상태에서 map을 생성하려 할 경우 오류 발생하므로 분기 처리
     if (mapContainer) {
@@ -57,8 +49,11 @@
 
       var marker = new kakao.maps.Marker({
         map: map,
-        position: new kakao.maps.LatLng($placeDetail.data.y, $placeDetail.data.x)
-      }) 
+        position: new kakao.maps.LatLng($placeDetail.data.y, $placeDetail.data.x),
+        image: markerImage
+      })
+      
+      marker.setMap(map);
     }
 
   })
@@ -94,7 +89,7 @@
 </div>
 
 <div class="place-detail-header">
-  <span class={category}>{$placeDetail.data.category_name}</span>
+  <span class={'ct-'+$placeDetail.data.category_group_id+'-l'}>{$placeDetail.data.category_name}</span>
   <h2>{$placeDetail.data.place_name}</h2>
 </div>
 

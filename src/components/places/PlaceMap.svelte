@@ -40,14 +40,19 @@
       var map = new kakao.maps.Map(mapContainer, mapOption);
 
       for (var i = 0; i < positions.length; i++) {
+        var imageSrc = `/src/images/markers/${positions[i].category_group_id}-marker-${i+1}.png`,   
+        imageSize = new kakao.maps.Size(50, 50)      
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
+
         let latlng = new kakao.maps.LatLng(positions[i].y, positions[i].x)
         var marker = new kakao.maps.Marker({
             map: map,
-            position: latlng
+            position: latlng,
+            image: markerImage
         })
 
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div>' + positions[i].place_name + '</div>'
+            content: '<div><span style="font-size:smaller">' + positions[i].place_name + '</span></div>'
         })
 
         kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));

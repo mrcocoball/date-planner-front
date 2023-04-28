@@ -4,7 +4,6 @@
   export let index
 
   let reviewScoreStar = ''
-  let category = ''
 
   afterUpdate(() => {
     if (place.avg_review_score < 1) {
@@ -21,24 +20,13 @@
       reviewScoreStar = `★★★★★`
     }
 
-    if (place.category_name == '관광명소') {
-      category = 'ct-cb1'
-    } else if (place.category_name == '카페') {
-      category = 'ct-cb2'
-    } else if (place.category_name == '문화시설') {
-      category = 'ct-cb3'
-    } else if (place.category_name == '음식점') {
-      category = 'ct-cb4'
-    } else {
-      category = 'ct-cb5'
-    }
   })
 
 </script>
 
 <div class="place-thumb">
   <div class="place-default">
-    <span class={category}>{place.category_name}</span>
+    <span class={'ct-'+place.category_group_id}>{place.category_name}</span>
     <h5>{place.place_name}</h5>
     <span>{place.address_name}</span>
     <br>
