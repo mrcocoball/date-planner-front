@@ -1,6 +1,6 @@
 <script>
   import Footer from "../../components/Footer.svelte";
-import AuthHeader from "../../components/auth/AuthHeader.svelte";
+  import AuthHeader from "../../components/auth/AuthHeader.svelte";
   import PlaceList from "../../components/places/PlaceList.svelte";
 
   let placeSearchMode = false

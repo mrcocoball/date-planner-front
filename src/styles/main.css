@@ -1,0 +1,12 @@
+.main-index-sub {
+  margin-top: 40px;
+}
+
+.main-image {
+  min-height: 500px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-image: url('../images/main-background2.png'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
