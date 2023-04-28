@@ -88,7 +88,7 @@
     }
   }
 
-  const goBack = () => router.goto('/')
+  const goBack = () => router.goto('/login')
 
 </script>
 

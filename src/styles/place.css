@@ -371,7 +371,7 @@ label.region2-selected {
 }
 
 div.place-information-empty {
-  min-height: 510px;
+  min-height: 481px;
   background-image: url('../images/place-background.png'); 
   background-repeat: no-repeat; 
   background-position: center;
