@@ -208,7 +208,8 @@ span.review-score {
   color: gold;
 }
 
-span.ct-cb1 {
+/* 관광명소 */
+span.ct-AT4 {
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -219,7 +220,8 @@ span.ct-cb1 {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb2 {
+/* 카페 */
+span.ct-CE7 {
   font-size: smaller;
   display: inline-block;
   width: 60px;
@@ -230,7 +232,8 @@ span.ct-cb2 {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb3 {
+/* 문화시설 */
+span.ct-CT1 {
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -241,7 +244,8 @@ span.ct-cb3 {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb4 {
+/* 음식점 */
+span.ct-FD6 {
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -252,7 +256,8 @@ span.ct-cb4 {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb5 {
+/* 지하철 */
+span.ct-SW8 {
   display: inline-block;
   width: 60px;
   text-align: center;
@@ -263,7 +268,8 @@ span.ct-cb5 {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb1-l {
+/* 관광명소 */
+span.ct-AT4-l {
   display: inline-block;
   width: 70px;
   text-align: center;
@@ -273,7 +279,8 @@ span.ct-cb1-l {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb2-l {
+/* 카페 */
+span.ct-CE7-l {
   display: inline-block;
   width: 70px;
   text-align: center;
@@ -283,7 +290,8 @@ span.ct-cb2-l {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb3-l {
+/* 문화시설 */
+span.ct-CT1-l {
   display: inline-block;
   width: 70px;
   text-align: center;
@@ -293,7 +301,8 @@ span.ct-cb3-l {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb4-l {
+/* 음식점 */
+span.ct-FD6-l {
   display: inline-block;
   width: 70px;
   text-align: center;
@@ -303,7 +312,8 @@ span.ct-cb4-l {
   border-radius: 5px / 5px;
 }
 
-span.ct-cb5-l {
+/* 지하철 */
+span.ct-SW8-l {
   display: inline-block;
   width: 70px;
   text-align: center;
