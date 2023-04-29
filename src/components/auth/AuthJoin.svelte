@@ -3,7 +3,6 @@
   import { afterUpdate } from 'svelte'
   import { auth } from '../../store/auth/authStore'
   import { router } from 'tinro'
-  import '../../styles/auth.css'
 
   let values = {
     formEmail: '',

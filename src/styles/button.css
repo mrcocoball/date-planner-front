@@ -82,6 +82,16 @@
   margin-top: 10px;
 }
 
+.btn-kakao {
+  background-color: 	#FEE500;
+  color:rgb(0, 33, 61);
+}
+
+.btn-kakao:hover {
+  background-color: 	#FEE500;
+  color:rgb(0, 33, 61);
+}
+
 
 /* 페이징 관련 */
 

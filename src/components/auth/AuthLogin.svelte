@@ -8,6 +8,10 @@
     formPassword: '',
   }
 
+  // 환경 변수 처리 필요
+  let clientKey = '011d0cfa20cc82797d246cb26d390b2b'
+  let redirectUri = 'http://localhost:5173/social/login/kakao'
+
   const resetValues = () => {
     values.formEmail = ''
     values.formPassword = ''
@@ -46,6 +50,9 @@
     <span>혹시 아이디가 없으신가요?</span>
     <div class="login-footer-button">
       <button class="w-100 btn btn-lg btn-create" on:click={goJoin}>회원가입</button>
+      <a href={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${clientKey}&redirect_uri=${redirectUri}`}>
+        <button class="w-100 btn btn-lg btn-kakao" style="margin-top: 10px;">카카오 로그인 (이메일 제공 동의 필요)</button>
+      </a>
       <button class="w-100 btn btn-lg btn-cancel" on:click={goBack} style="margin-top: 10px;">취소</button>
     </div>
   </div>

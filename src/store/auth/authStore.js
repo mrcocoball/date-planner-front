@@ -1,5 +1,5 @@
 import { writable, derived } from 'svelte/store'
-import { delApi, postApi } from '../../service/api'
+import { delApi, postApi, postKakaoApi } from '../../service/api'
 import { router } from 'tinro'
 
 // 인증 관련 store
@@ -81,6 +81,73 @@ function setAuth() {
     }
   };
 
+  const getKakaoAccessToken = async (code) => {
+
+    // 환경변수 처리 필요
+    let clientKey = '011d0cfa20cc82797d246cb26d390b2b'
+    let redirectUri = 'http://localhost:5173/social/login/kakao'
+
+    try {
+      const options = {
+        path: "https://kauth.kakao.com/oauth/token",
+        data: {
+          grant_type: "authorization_code",
+          client_id: clientKey,
+          redirect_uri: redirectUri,
+          code: code
+        },
+      };
+
+      const result = await postKakaoApi(options)
+      return result
+    } catch (error) {
+    }
+  }
+
+  const registerCheck = async (access_token) => {
+    try {
+      await postApi({path: `/api/v1/oauth/check?accessToken=${access_token}`})
+      return true
+    } catch (error) {
+      return false
+    }
+  }
+
+  const socialRegister = async (nickname, access_token) => {
+    try {
+      const options = {
+        path: "/api/v1/oauth/join/kakao",
+        data: {
+          nickname: nickname,
+          access_token: access_token
+        },
+      };
+
+      await postApi(options);
+      alert("회원 가입이 완료되었습니다");
+      router.goto("/login");
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+  };
+
+  const socialLogin = async (access_token) => {
+    try {
+      const options = {
+        path: "/api/v1/oauth/login/kakao",
+        data: {
+          access_token: access_token,
+        },
+      };
+      const result = await postApi(options);
+      set(result);
+      isRefresh.set(true);
+      router.goto("/");
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+  };
+
   return {
     subscribe,
     refresh,
@@ -88,6 +155,10 @@ function setAuth() {
     logout,
     resetUserInfo,
     register,
+    getKakaoAccessToken,
+    registerCheck,
+    socialRegister,
+    socialLogin,
   };
 }
 
