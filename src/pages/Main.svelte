@@ -5,6 +5,7 @@
 
   const goPlaces = () => router.goto('/places')
   const goPlans = () => router.goto('/mypage/plans')
+  const goLogin = () => router.goto('/login')
 
 </script>
 
@@ -64,7 +65,7 @@
     <h2 class="text-body-emphasis">회원가입 / 로그인</h2>
     <p>북마크, 플랜, 리뷰 기능을 위해선 회원가입 및 로그인이 필요합니다.</p>
     <div class="d-inline-flex">
-      <button class="btn btn-create" type="button">로그인하기</button>
+      <button class="btn btn-create" type="button" on:click={goLogin}>로그인하기</button>
     </div>
   </div>
   <Footer />  

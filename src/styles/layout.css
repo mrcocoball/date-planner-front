@@ -24,6 +24,10 @@ pre {
   background-color: white;
 }
 
+.not-found-box {
+  min-width: 1000px;
+}
+
 .place-main {
   min-width: 400px; 
   max-width: 1000px; 

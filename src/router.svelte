@@ -6,6 +6,9 @@
   import Login from './pages/auth/Login.svelte';
   import Join from './pages/auth/Join.svelte';
 
+  // 소셜 로그인, 회원가입
+  import SocialLogin from './pages/auth/SocialLogin.svelte';
+
   // 메인 페이지
   import Main from './pages/Main.svelte';
 
@@ -26,16 +29,20 @@
   import QnAs from './pages/support/QNAs.svelte';
 
   // 에러 페이지 관련
-  import NotFound from './pages/NotFound.svelte';
+  import NotFound from './pages/notFound.svelte';
   
 </script>
+
+<Route fallback><NotFound /></Route>
 
 {#if !$isLogin}
   <Route path="/login"><Login /></Route>
   <Route path="/join"><Join /></Route>
+  <Route path="/social/login/kakao"><SocialLogin /></Route>
 {:else}
   <Route path="/login"><NotFound /></Route>
   <Route path="/join"><NotFound /></Route>
+  <Route path="/social/login/kakao"><NotFound /></Route>
 {/if}
 
 <Route path="/"><Main /></Route>
@@ -62,5 +69,3 @@
 {:else}
 <Route path="/support/qna"><Login /></Route>
 {/if}
-
-<Route fallback><NotFound /></Route>
