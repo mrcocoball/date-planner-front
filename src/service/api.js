@@ -31,6 +31,29 @@ const send = async ({method='', path='', data={}, access_token=''} = {}) => {
   }
 }
 
+const externalKakaoSend = async ({method='', path='', data={}, access_token=''} = {}) => {
+  const url = path
+
+  const headers = {
+    "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+  }
+
+  const options = {
+    method,
+    url,
+    headers,
+    data,
+  }
+
+  try {
+    const response = await axios(options);
+    return response.data
+  }
+  catch(error) {
+    throw error
+  }
+}
+
 const getApi = ({path='', access_token=''} = {}) => {
   return send({method: 'GET', path, access_token})
 }
@@ -47,9 +70,14 @@ const delApi = ({path='', data={}, access_token=''} = {}) => {
   return send({method: 'DELETE', path, data, access_token})
 }
 
+const postKakaoApi = ({path='', data={}, access_token=''} = {}) => {
+  return externalKakaoSend({method: 'POST', path, data, access_token})
+}
+
 export {
   getApi,
   putApi,
   postApi,
-  delApi
+  delApi,
+  postKakaoApi
 }
