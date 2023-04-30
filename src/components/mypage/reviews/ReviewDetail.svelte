@@ -54,6 +54,8 @@
   }
 
   const onUpdateReview = (id, title, description, reviewScore) => {
+    if (!titleLengthValidate()) return
+    if (!descriptionLengthValidate()) return
     if(confirm('리뷰를 수정하시겠습니까?')) {
       myReviewDetail.updateMyReview(id, title, description, reviewScore)
       editMode = false
@@ -70,6 +72,30 @@
   onDestroy(() => {
     dispatch('detail-off')
   })
+
+  const titleLengthValidate = () => {
+    if (initValues.formTitle.length == 0) {
+      alert('제목 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (initValues.formTitle.length > 20) {
+      alert('제목 길이는 20자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+  const descriptionLengthValidate = () => {
+    if (initValues.formDescription.length == 0) {
+      alert('내용 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (initValues.formDescription.length > 500) {
+      alert('내용 길이는 500자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
 
 </script>
 
@@ -108,13 +134,13 @@
     <li class="list-group-item">
       <div>
         <h6>제목</h6>
-        <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={initValues.formTitle}/>
+        <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요 (최대 20자)" bind:value={initValues.formTitle}/>
       </div>
     </li>
     <li class="list-group-item">
       <div>
         <h6>내용</h6>
-        <textarea id="description" class="form-control" name="description" placeholder="내용을 입력해주세요" rows="5" bind:value={initValues.formDescription}></textarea>
+        <textarea id="description" class="form-control" name="description" placeholder="내용을 입력해주세요 (최대 500자)" rows="5" bind:value={initValues.formDescription}></textarea>
       </div>
     </li>
     <li class="list-group-item">

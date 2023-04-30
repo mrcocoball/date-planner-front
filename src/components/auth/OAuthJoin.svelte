@@ -46,10 +46,16 @@
       checkedNickname = ''
       nicknameChecked = false
     }
+    if (values.formNickname.length > 13) {
+      checkedNickname = ''
+      nicknameChecked = false
+    }
     if (registerd) onSocialLogin()
   })
 
   const onNicknameCheck = async () => {
+
+    if(!nicknameLengthValidate()) return
     try {
       await postApi({path: `/api/v1/nicknameCheck?nickname=${values.formNickname}`})
       checkedNickname = values.formNickname
@@ -62,6 +68,7 @@
   }
 
   const onSocialJoin = async() => {
+    if(!nicknameLengthValidate()) return
     if (!nicknameChecked) {
       alert('닉네임 중복 체크를 하지 않았습니다!')
       return
@@ -85,6 +92,19 @@
 
   const goBack = () => router.goto('/login')
 
+  const nicknameLengthValidate = () => {
+    if (values.formNickname.length == 0) {
+      alert('닉네임 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (values.formNickname.length > 12) {
+      alert('닉네임 길이는 12자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+
 </script>
 
 {#if !registerd}
@@ -93,7 +113,7 @@
   <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
   <div class="form-floating valid-form-text">
     <input type="text" class={nicknameChecked ? formValid : formInvalid} name="nickname" placeholder="닉네임" autocomplete="off" bind:value={values.formNickname}>
-    <label for="floatingInput">닉네임</label>
+    <label for="floatingInput">닉네임 (최대 12자)</label>
     {#if !nicknameChecked}
     <div class="join-valid-button">
       <button class="btn btn-search" on:click={onNicknameCheck}>중복 체크</button>

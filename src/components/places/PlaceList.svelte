@@ -16,6 +16,14 @@
   }
 
   const searchPlaces = async () => {
+    if (initValues.formCategories.length == 0) {
+      alert('카테고리를 최소 1개 이상 지정해야 합니다!')
+      return
+    }
+    if (initValues.formAddress.length == 0) {
+      alert('주소를 입력해주세요!')
+      return
+    }
     try {
       await places.fetchPlaces(initValues.formAddress, initValues.formCategories)
       searchMode = true
