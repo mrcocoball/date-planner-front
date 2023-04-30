@@ -2,10 +2,21 @@
   import Footer from "../components/Footer.svelte";
   import AuthHeader from "../components/auth/AuthHeader.svelte";
   import { router } from 'tinro'
+  import { afterUpdate } from 'svelte'
 
   const goPlaces = () => router.goto('/places')
   const goPlans = () => router.goto('/mypage/plans')
   const goLogin = () => router.goto('/login')
+
+  afterUpdate(() => {
+    // 운영 환경에서만 작동
+    if (import.meta.env.PROD) {
+      let authCode = new URL(window.location.href).searchParams.get('code')
+      if (authCode != null && authCode.length > 1) {
+        router.goto(`/social/login/kakao?code=${authCode}`)
+      }
+    }
+  })
 
 </script>
 

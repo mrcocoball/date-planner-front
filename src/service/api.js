@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const send = async ({method='', path='', data={}, access_token=''} = {}) => {
-  const commonUrl = 'http://localhost:8084'
+  const commonUrl = import.meta.env.VITE_BACKEND_API_URL
   const url = commonUrl + path
 
   const headers = {
