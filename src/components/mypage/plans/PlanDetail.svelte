@@ -78,6 +78,7 @@
   }
 
   const onUpdatePlan = (id, title) => {
+    if (!titleLengthValidate()) return
     if(confirm('플랜을 수정하시겠습니까?')) {
       planDetail.updatePlan(id, title, $planDetail.data.comment)
       editMode = false
@@ -91,6 +92,7 @@
   }
 
   const onWriteComment = (id) => {
+    if (!commentLengthValidate()) return
     if(confirm('후기를 작성하시겠습니까?')) {
       planDetail.updateComment(id, $planDetail.data.title, commentValues.formComment)
     }
@@ -107,10 +109,35 @@
   }
 
   const onUpdateComment = (id) => {
+    if (!commentLengthValidate()) return
     if(confirm('후기를 수정하시겠습니까?')) {
       planDetail.updateComment(id, $planDetail.data.title, commentValues.formComment)
     }
     offCommentEditMode()
+  }
+
+  const titleLengthValidate = () => {
+    if (titleValues.formTitle.length == 0) {
+      alert('제목 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (titleValues.formTitle.length > 20) {
+      alert('제목 길이는 20자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+  const commentLengthValidate = () => {
+    if (commentValues.formComment.length == 0) {
+      alert('후기 내용 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (commentValues.formComment.length > 300) {
+      alert('후기 내용 길이는 300자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
   }
 
   onDestroy(() => {
@@ -159,7 +186,7 @@
     </div>
     {:else}
     <h6>플랜 이름</h6>
-    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={titleValues.formTitle}/>
+    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요 (최대 20자)" bind:value={titleValues.formTitle}/>
     <div class="detail-bottom-button">
       <button class="btn btn-update" on:click={() => onUpdatePlan($planDetail.data.id, titleValues.formTitle)}>수정</button>
       <button class="btn btn-cancel" on:click={offEditMode}>취소하기</button>
@@ -226,7 +253,7 @@
       <span>플랜을 완료하셨군요! 후기를 남겨보세요!</span>
     </div>
   </div>
-  <textarea rows="5" class="form-control" bind:value={commentValues.formComment}></textarea>
+  <textarea rows="5" class="form-control" placeholder="내용을 작성해주세요 (최대 300자)" bind:value={commentValues.formComment}></textarea>
   <div class="detail-bottom-button">
     <button class="btn btn-create" on:click={() => onWriteComment($planDetail.data.id)}>후기 작성</button>
   </div>
@@ -238,7 +265,7 @@
       <span>후기를 수정합니다</span>
     </div>
   </div>
-  <textarea rows="5" class="form-control" bind:value={commentValues.formComment}></textarea>
+  <textarea rows="5" class="form-control" placeholder="내용을 작성해주세요 (최대 300자)" bind:value={commentValues.formComment}></textarea>
   <div class="detail-bottom-button">
     <button class="btn btn-update" on:click={() => onUpdateComment($planDetail.data.id)}>수정하기</button>
     <button class="btn btn-cancel" on:click={offCommentEditMode}>취소하기</button>
