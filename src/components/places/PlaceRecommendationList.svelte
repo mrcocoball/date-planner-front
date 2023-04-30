@@ -57,6 +57,10 @@
   }
 
   const searchPlaceRecommendations = async () => {
+    if (initValues.formRegion1.length == 0) {
+      alert('장소를 지정해주세요!')
+      return
+    }
     try {
       await placeRecommendations.fetchPlaces(initValues.formRegion1, initValues.formRegion2)
       searchMode = true
