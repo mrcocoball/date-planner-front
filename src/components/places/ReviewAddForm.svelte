@@ -9,6 +9,8 @@
   }
 
   const onAddReview = async() => {
+    if (!titleLengthValidate()) return
+    if (!descriptionLengthValidate()) return
     try{
       await reviews.addReview($placeDetailData.data.place_id, values.formTitle, values.formDescription, values.formReviewScore)
       onCancelAddReview()
@@ -24,6 +26,30 @@
     values.formReviewScore = 0
   }
 
+  const titleLengthValidate = () => {
+    if (values.formTitle.length == 0) {
+      alert('제목 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (values.formTitle.length > 20) {
+      alert('제목 길이는 20자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+  const descriptionLengthValidate = () => {
+    if (values.formDescription.length == 0) {
+      alert('내용 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (values.formDescription.length > 500) {
+      alert('내용 길이는 500자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
 </script>
 
 <div class="review-form">
@@ -34,13 +60,13 @@
     <label>
       <h6>제목</h6>
     </label>
-    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={values.formTitle}/>
+    <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요 (최대 20자)" bind:value={values.formTitle}/>
   </div>
   <div>
     <label>
       <h6>내용</h6>
     </label>
-    <textarea id="description" class="form-control" name="description" placeholder="내용을 입력해주세요" rows="5" bind:value={values.formDescription}></textarea>
+    <textarea id="description" class="form-control" name="description" placeholder="내용을 입력해주세요 (최대 500자)" rows="5" bind:value={values.formDescription}></textarea>
   </div>
   <div>
     <label>
