@@ -92,6 +92,15 @@
   color:rgb(0, 33, 61);
 }
 
+.btn-logout {
+  background-color: aliceblue;
+}
+
+.btn-logout:hover {
+  color: aliceblue;
+}
+
+
 
 /* 페이징 관련 */
 

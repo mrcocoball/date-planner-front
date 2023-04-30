@@ -4,6 +4,8 @@
   import { auth } from '../../store/auth/authStore'
   import { router } from 'tinro'
 
+  let active = 'mypage'
+
   const goPlans = () => router.goto('/mypage/plans')
 
   const goReviews = () => router.goto('/mypage/reviews')
@@ -12,7 +14,7 @@
 
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid mypages-main">
   <div class="mypages-header">
     <h2>마이 페이지</h2>
@@ -77,5 +79,5 @@
       </div>
     </div>
   </div>
-  <Footer />
 </main>
+<Footer />

@@ -3,12 +3,13 @@
   import AuthHeader from "../../../components/auth/AuthHeader.svelte";
   import BookmarkList from "../../../components/mypage/bookmarks/BookmarkList.svelte";
 
+  let active = 'mypage'
   let bookmarkSearchMode = false
   
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid bookmark-main">
   <BookmarkList {bookmarkSearchMode} />
-  <Footer />
 </main>
+<Footer />

@@ -3,6 +3,8 @@
   import AuthHeader from "../../components/auth/AuthHeader.svelte";
   import { router } from 'tinro'
 
+  let active = 'support'
+
   const goAnnouncements = () => router.goto('/support/announcements')
 
   const goFaqs = () => router.goto('/support/faq')
@@ -11,7 +13,7 @@
 
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid supports-main">
   <div class="supports-header">
     <h2>고객센터</h2>
@@ -44,6 +46,5 @@
       </div>
     </div>
   </div>
-
-  <Footer />
 </main>
+<Footer />

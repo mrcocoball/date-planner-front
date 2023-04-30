@@ -3,10 +3,12 @@
   import PlaceRecommendationList from "../../components/places/PlaceRecommendationList.svelte";
   import Footer from "../../components/Footer.svelte";
 
+  let active = 'place'
+
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid place-recommendation-main">
   <PlaceRecommendationList />
-  <Footer />
 </main>
+<Footer />

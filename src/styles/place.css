@@ -150,6 +150,7 @@ div.place-search-bar {
   margin-top: 5px;
   justify-content: space-between !important;
   display: flex !important;
+  margin-bottom: 10px;
 }
 
 div.place-search-bar-region1 {

@@ -112,7 +112,9 @@
   <label for="cb5">지하철역</label>
   <div class="place-search-bar">
     <input type="text" class="form-control address-input" name="address" placeholder="주소를 입력해주세요 (예 : 서울시 관악구 / 서초동)" autocomplete="off" bind:value={initValues.formAddress} />
-    <button class="btn btn-search" on:click={searchPlaces}>검색</button>
+  </div>
+  <div class="detail-top-button">
+    <button class="w-100 btn btn-search" on:click={searchPlaces}>검색</button>
   </div>
 </div>
 

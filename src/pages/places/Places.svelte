@@ -4,11 +4,12 @@
   import PlaceList from "../../components/places/PlaceList.svelte";
 
   let placeSearchMode = false
+  let active = 'place'
 
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid place-main">
   <PlaceList {placeSearchMode} />
-  <Footer />
 </main>
+<Footer />
