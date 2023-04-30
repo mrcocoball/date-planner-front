@@ -82,10 +82,10 @@ function setAuth() {
   };
 
   const getKakaoAccessToken = async (code) => {
-
+    
     // 환경변수 처리 필요
-    let clientKey = '011d0cfa20cc82797d246cb26d390b2b'
-    let redirectUri = 'http://localhost:5173/social/login/kakao'
+    let clientKey = import.meta.env.VITE_KAKAO_CLIENT_KEY
+    let redirectUri = import.meta.env.VITE_OAUTH_REDIRECT_URL
 
     try {
       const options = {
