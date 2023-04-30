@@ -3,10 +3,12 @@
   import PlanList from "../../../components/mypage/plans/PlanList.svelte";
   import Footer from "../../../components/Footer.svelte";
 
+  let active = 'plan'
+
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid plan-main">
   <PlanList />
-  <Footer />
 </main>
+<Footer />

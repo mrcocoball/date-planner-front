@@ -4,6 +4,8 @@
   import { router } from 'tinro'
   import { afterUpdate } from 'svelte'
 
+  let active = ''
+
   const goPlaces = () => router.goto('/places')
   const goPlans = () => router.goto('/mypage/plans')
   const goLogin = () => router.goto('/login')
@@ -20,7 +22,7 @@
 
 </script>
 
-<AuthHeader />
+<AuthHeader {active} />
 <main class="container-fluid main-box">
   <div class="main-index-header">
     <h1>오늘 어디에서 만날까?</h1>
@@ -79,5 +81,5 @@
       <button class="btn btn-create" type="button" on:click={goLogin}>로그인하기</button>
     </div>
   </div>
-  <Footer />  
 </main>
+<Footer />  
