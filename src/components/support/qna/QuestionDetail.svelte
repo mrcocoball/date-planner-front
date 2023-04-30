@@ -44,6 +44,7 @@
   const dispatch = createEventDispatcher()
 
   const onAddAnswer = async () => {
+    if (!answerDescriptionLengthValidate()) return
     try{
       await qnaDetail.addAnswer($qnaDetail.data.id, answerValues.formDescription)
       answerValues.formDescription = ''
@@ -80,10 +81,48 @@
   }
 
   const onUpdateQuestion = () => {
+    if (!titleLengthValidate()) return
+    if (!descriptionLengthValidate()) return
     if(confirm('질문을 수정하시겠습니까?')) {
       qnaDetail.updateQuestion($qnaDetail.data.id, modifyValues.formTitle, modifyValues.formDescription, modifyValues.formCategoryId)
       editMode = false
     }
+  }
+
+  const titleLengthValidate = () => {
+    if (modifyValues.formTitle.length == 0) {
+      alert('제목 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (modifyValues.formTitle.length > 20) {
+      alert('제목 길이는 20자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+  const descriptionLengthValidate = () => {
+    if (modifyValues.formDescription.length == 0) {
+      alert('내용 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (modifyValues.formDescription.length > 500) {
+      alert('내용 길이는 500자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
+  }
+
+  const answerDescriptionLengthValidate = () => {
+    if (answerValues.formDescription.length == 0) {
+      alert('내용 길이는 최소 1자 이상이어야 합니다!')
+      return false
+    }
+    if (answerValues.formDescription.length > 300) {
+      alert('내용 길이는 300자를 넘길 수 없습니다!')
+      return false
+    }
+    return true
   }
 
   onDestroy(() => {
@@ -143,7 +182,7 @@
     <div class="answer-add-form-header">
       <h4>추가 질문</h4>
     </div>
-    <textarea class="form-control" rows="5" placeholder="내용을 입력해주세요 (답변 수정, 삭제 불가)" bind:value={answerValues.formDescription}></textarea>
+    <textarea class="form-control" rows="5" placeholder="내용을 입력해주세요 (최대 300자, 답변 수정 / 삭제 불가)" bind:value={answerValues.formDescription}></textarea>
     <div class="detail-bottom-button">
       <button class="btn btn-create" on:click={onAddAnswer}>답변 작성</button>
     </div>
@@ -164,11 +203,11 @@
     </div>
     <div class="question-form-div">
       <h6>제목</h6>
-      <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요" bind:value={modifyValues.formTitle}/>
+      <input type="text" class="form-control" name="title" placeholder="제목을 입력해주세요 (최대 20자)" bind:value={modifyValues.formTitle}/>
     </div>
     <div class="question-form-div">
       <h6>내용</h6>
-      <textarea class="form-control" name="description" rows="15" placeholder="내용을 입력해주세요" bind:value={modifyValues.formDescription}/>
+      <textarea class="form-control" name="description" rows="15" placeholder="내용을 입력해주세요 (최대 500자)" bind:value={modifyValues.formDescription}/>
     </div>
   </div>
   <div class="detail-bottom-button">
