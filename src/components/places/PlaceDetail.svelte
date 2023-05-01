@@ -41,7 +41,7 @@
     // 초기 업데이트 시 category_group_id가 없어서 imageSrc 관련 오류 로그가 출력되어 로그 출력 방지용으로 분기 처리
     if (!$placeDetail.data.category_group_id) return
 
-    var imageSrc = `/src/images/markers/solo-marker-${$placeDetail.data.category_group_id}.png`,   
+    var imageSrc = `/images/markers/solo-marker-${$placeDetail.data.category_group_id}.png`,   
         imageSize = new kakao.maps.Size(100, 100)
       
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
