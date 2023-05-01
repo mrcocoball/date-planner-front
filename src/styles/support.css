@@ -3,7 +3,7 @@
 }
 
 div.announcement {
-  background-image: url('../images/announcement-thumb.png');
+  background-image: url('/images/announcement-thumb.png');
   background-repeat: no-repeat; 
   background-position: right; 
 }
