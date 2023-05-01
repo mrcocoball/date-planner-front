@@ -1,7 +1,7 @@
 div.bookmark-list {
   margin-top: 30px;
   min-height: 552px;
-  background-image: url('../images/bookmark-background.png'); 
+  background-image: url('/images/bookmark-background.png'); 
   background-repeat: no-repeat; 
   background-position: top;
 }

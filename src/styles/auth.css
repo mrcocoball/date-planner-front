@@ -78,14 +78,14 @@ div.join-valid-button > .btn-search {
 
 div.login-img {
   min-height: 200px;
-  background-image: url('../images/login-img.png'); 
+  background-image: url('/images/login-img.png'); 
   background-repeat: no-repeat; 
   background-position: center;
 }
 
 div.join-img {
   min-height: 200px;
-  background-image: url('../images/join-img.png'); 
+  background-image: url('/images/join-img.png'); 
   background-repeat: no-repeat; 
   background-position: center;
 }

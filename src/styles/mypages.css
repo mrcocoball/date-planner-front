@@ -3,17 +3,17 @@
 }
 
 img.profile-img {
-  background-image: url('../images/profile-background-thumb.png'); 
+  background-image: url('/images/profile-background-thumb.png'); 
 }
 
 img.plan-img {
-  background-image: url('../images/plan-background-thumb.png'); 
+  background-image: url('/images/plan-background-thumb.png'); 
 }
 
 img.bookmark-img {
-  background-image: url('../images/bookmark-background-thumb.png'); 
+  background-image: url('/images/bookmark-background-thumb.png'); 
 }
 
 img.review-img {
-  background-image: url('../images/review-background-thumb.png'); 
+  background-image: url('/images/review-background-thumb.png'); 
 }

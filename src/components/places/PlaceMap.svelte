@@ -97,7 +97,7 @@
       var map = new kakao.maps.Map(mapContainer, mapOption);
 
       for (var i = 0; i < positions.length; i++) {
-        var imageSrc = `/src/images/markers/${positions[i].category_group_id}-marker-${i+1}.png`,   
+        var imageSrc = `/images/markers/${positions[i].category_group_id}-marker-${i+1}.png`,   
         imageSize = new kakao.maps.Size(50, 50)      
         var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
 
