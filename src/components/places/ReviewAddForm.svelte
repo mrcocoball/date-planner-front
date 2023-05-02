@@ -9,8 +9,7 @@
   }
 
   const onAddReview = async() => {
-    if (!titleLengthValidate()) return
-    if (!descriptionLengthValidate()) return
+    if (!titleLengthValidate() || !descriptionLengthValidate()) return
     try{
       await reviews.addReview($placeDetailData.data.place_id, values.formTitle, values.formDescription, values.formReviewScore)
       onCancelAddReview()
@@ -54,7 +53,7 @@
 
 <div class="review-form">
   <div class="review-form-header" style="margin-bottom: 20px;">
-    <span>보고 계신 장소에 대한 여러분의 리뷰를 작성해주세요!</span>
+    <span>보고 계신 장소에 대한 리뷰를 작성해보세요!</span>
   </div>
   <div class="review-form-detail">
     <label>

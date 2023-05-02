@@ -27,7 +27,7 @@
 <div class="place-thumb">
   <div class="place-default">
     <span class={'ct-'+place.category_group_id}>{place.category_name}</span>
-    <h5>{place.place_name}</h5>
+    <h5>{index+1} {place.place_name}</h5>
     <span>{place.address_name}</span>
     <br>
     <span class="tag">
