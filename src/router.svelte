@@ -9,6 +9,10 @@
   // 소셜 로그인, 회원가입
   import SocialLogin from './pages/auth/SocialLogin.svelte';
 
+  // 회원 탈퇴
+  import Withdraw from './pages/auth/Withdraw.svelte';
+  import SocialWithdraw from './pages/auth/SocialWithdraw.svelte';
+
   // 메인 페이지
   import Main from './pages/Main.svelte';
 
@@ -39,10 +43,14 @@
   <Route path="/login"><Login /></Route>
   <Route path="/join"><Join /></Route>
   <Route path="/social/login/kakao"><SocialLogin /></Route>
+  <Route path="/withdraw"><NotFound /></Route>
+  <Route path="/social/withdraw/kakao"><NotFound /></Route>
 {:else}
   <Route path="/login"><NotFound /></Route>
   <Route path="/join"><NotFound /></Route>
   <Route path="/social/login/kakao"><NotFound /></Route>
+  <Route path="/withdraw"><Withdraw /></Route>
+  <Route path="/social/withdraw/kakao"><SocialWithdraw /></Route>
 {/if}
 
 <Route path="/"><Main /></Route>
