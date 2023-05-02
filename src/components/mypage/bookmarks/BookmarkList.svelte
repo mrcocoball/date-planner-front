@@ -29,6 +29,8 @@
   }
 
   const onDetailMode = (place_id) => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
     detailMode = true
     goPlaceDetail(place_id)
   }

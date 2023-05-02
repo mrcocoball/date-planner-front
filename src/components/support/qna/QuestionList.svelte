@@ -23,6 +23,8 @@
   }
 
   const onDetailMode = (id) => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
     detailMode = true
     goQnaDetail(id)
   }

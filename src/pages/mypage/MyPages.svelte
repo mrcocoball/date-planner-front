@@ -6,11 +6,23 @@
 
   let active = 'mypage'
 
-  const goPlans = () => router.goto('/mypage/plans')
+  const goPlans = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/mypage/plans')
+  } 
 
-  const goReviews = () => router.goto('/mypage/reviews')
+  const goReviews = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/mypage/reviews')
+  } 
 
-  const goBookmarks = () => router.goto('/mypage/bookmarks')
+  const goBookmarks = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/mypage/bookmarks')
+  } 
 
 </script>
 
