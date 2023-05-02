@@ -5,6 +5,8 @@
   import { router } from 'tinro'
 
   let active = 'mypage'
+  let clientKey = import.meta.env.VITE_KAKAO_CLIENT_KEY
+  let redirectUri = import.meta.env.VITE_OAUTH_REDIRECT_URL2
 
   const goPlans = () => {
     let element = document.getElementById("main_nav")
@@ -24,6 +26,17 @@
     router.goto('/mypage/bookmarks')
   } 
 
+  const goWithdrawCommon = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/withdraw')
+  }
+
+  const goWithdrawSocial = () => {
+    let url = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${clientKey}&redirect_uri=${redirectUri}`
+    location.href = url
+  }
+
 </script>
 
 <AuthHeader {active} />
@@ -40,6 +53,11 @@
           <h3 class="mb-0">프로필</h3>
           <br>
           <p class="card-text mb-auto">ID : {$auth.email}</p>
+          {#if $auth.social}
+          <button class="btn btn-search" on:click={goWithdrawSocial}>탈퇴하기</button>
+          {:else}
+          <button class="btn btn-search" on:click={goWithdrawCommon}>탈퇴하기</button>
+          {/if}
         </div>
         <div class="col-auto d-none d-lg-block">
           <img class="bd-placeholder-img profile-img" width="200" height="250">
