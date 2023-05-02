@@ -70,7 +70,6 @@ function setBookmarks() {
 
   const fetchBookmarks = async () => {    
     let path = `/api/v1/bookmarks`
-    requestPath.set(path)
 
     try {
 
@@ -95,6 +94,7 @@ function setBookmarks() {
         return datas
       })
 
+      requestPath.set(path)
       currentBookmarkPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
@@ -105,7 +105,7 @@ function setBookmarks() {
   }
 
   const fetchBookmarksByPage = async (savedPath, pageNum) => {
-    let path = savedPath + `&page=${pageNum}`
+    let path = savedPath + `?page=${pageNum}`
 
     try {
 

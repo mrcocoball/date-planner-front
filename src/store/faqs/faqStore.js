@@ -70,7 +70,6 @@ function setFaqs() {
 
   const fetchFaqs = async () => {    
     let path = `/api/v1/faqs`
-    requestPath.set(path)
 
     try {
 
@@ -95,6 +94,7 @@ function setFaqs() {
         return datas
       })
 
+      requestPath.set(path)
       currentFaqPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }

@@ -72,7 +72,6 @@ function setPlaces() {
 
   const fetchPlaces = async (address, category) => {    
     let path = `/api/v1/places?address=${address}&categories=${category}`
-    requestPath.set(path)
 
     try {
 
@@ -100,7 +99,7 @@ function setPlaces() {
         datas.data.totalPages = newData.totalPages
         return datas
       })
-
+      requestPath.set(path)
       currentPlacePaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
@@ -285,7 +284,6 @@ function setPlaceRecommendations() {
       region1 = region1 + '특별자치도'
     }
     let path = `/api/v1/recommendation?region1=${region1}&region2=${region2}`
-    requestPath.set(path)
 
     try {
 
@@ -310,6 +308,7 @@ function setPlaceRecommendations() {
         return datas
       })
 
+      requestPath.set(path)
       currentPlacePaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }

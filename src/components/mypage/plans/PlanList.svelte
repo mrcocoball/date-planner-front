@@ -31,6 +31,8 @@
   }
 
   const onDetailMode = (id) => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
     detailMode = true
     goPlanDetail(id)
   }
@@ -43,10 +45,6 @@
 
   const onAddPlanMode = () => {
     addMode = true
-  }
-
-  const offAddPlanMode = () => {
-    addMode = false
   }
 
   const goPlanDetail = async (id) => {
@@ -82,7 +80,7 @@
   <h2>플랜 목록</h2>
   <span>여러분만의 일정 플랜을 짜보세요. 장소를 검색하거나 북마크한 장소를 토대로 목적지를 체크하여 플랜을 짤 수 있습니다.</span>
   <br>
-  <span>또한 플랜을 완료하셨다면 후기를 남길 수 있습니다!</span>
+  <span>플랜을 완료하셨다면 후기를 남길 수도 있습니다!</span>
 </div>
 <div class="detail-top-button">
   <button class="btn btn-create" on:click={onAddPlanMode}>플랜 작성해보기</button>

@@ -70,7 +70,6 @@ function setQnas() {
 
   const fetchQnas = async () => {    
     let path = `/api/v1/questions`
-    requestPath.set(path)
 
     try {
 
@@ -95,6 +94,7 @@ function setQnas() {
         return datas
       })
 
+      requestPath.set(path)
       currentQnaPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
@@ -105,7 +105,7 @@ function setQnas() {
   }
 
   const fetchQnasByPage = async (savedPath, pageNum) => {
-    let path = savedPath + `&page=${pageNum}`
+    let path = savedPath + `?page=${pageNum}`
 
     try {
 
@@ -160,9 +160,6 @@ function setQnas() {
         datas.data.content = [newQuestion.data, ...datas.data.content]
         return datas
       })
-
-      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
-      //plans.resetPlans()
 
       return
 
@@ -334,9 +331,6 @@ function setQnaDetail() {
         datas.data.answers = [...datas.data.answers, newAnswer.data]
         return datas
       })
-
-      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
-      //plans.resetPlans()
 
       return
 

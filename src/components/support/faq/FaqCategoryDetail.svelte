@@ -18,7 +18,7 @@
       categoryText = '이벤트 관련 질문과 답변입니다.'
     }
     else if ($faqDetail.data.id == '4') {
-      categoryText = '서비스 이용 중 발생한 오류에 대한 질문과 답변입니다.'
+      categoryText = '서비스 관련 오류에 대한 질문과 답변입니다.'
     }
     else if ($faqDetail.data.id == '5') {
       categoryText = '기타 문의입니다.'

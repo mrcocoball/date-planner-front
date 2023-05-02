@@ -81,8 +81,7 @@
   }
 
   const onUpdateQuestion = () => {
-    if (!titleLengthValidate()) return
-    if (!descriptionLengthValidate()) return
+    if (!titleLengthValidate() || !descriptionLengthValidate()) return
     if(confirm('질문을 수정하시겠습니까?')) {
       qnaDetail.updateQuestion($qnaDetail.data.id, modifyValues.formTitle, modifyValues.formDescription, modifyValues.formCategoryId)
       editMode = false

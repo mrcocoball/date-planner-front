@@ -5,11 +5,23 @@
 
   let active = 'support'
 
-  const goAnnouncements = () => router.goto('/support/announcements')
+  const goAnnouncements = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/support/announcements')
+  }
 
-  const goFaqs = () => router.goto('/support/faq')
+  const goFaqs = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/support/faq')
+  } 
 
-  const goQnas = () => router.goto('/support/qna')
+  const goQnas = () => {
+    let element = document.getElementById("main_nav")
+    element.scrollIntoView();
+    router.goto('/support/qna')
+  } 
 
 </script>
 

@@ -9,9 +9,7 @@
   }
 
   const onAddQuestion = async() => {
-    if(!categoryIdValidate()) return
-    if(!titleLengthValidate()) return
-    if(!descriptionLengthValidate()) return
+    if(!categoryIdValidate() || !titleLengthValidate() || !descriptionLengthValidate()) return
     try{
       await qnas.addQuestion(values.formTitle, values.formDescription, values.formCategoryId)
       onCancelAddQuestion()

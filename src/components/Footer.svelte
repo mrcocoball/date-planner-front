@@ -1,7 +1,11 @@
   <script>
     import { router } from 'tinro'
 
-    const goSupport = () => router.goto('/support')
+    const goSupport = () => {
+      let element = document.getElementById("main_nav")
+      element.scrollIntoView();
+      router.goto('/support')
+    }
     const sendEmail = () => alert('준비 중입니다')
     const goHomepage = () => alert('준비 중입니다')
   </script>
