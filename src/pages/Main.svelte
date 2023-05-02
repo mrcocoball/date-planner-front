@@ -1,8 +1,8 @@
 <script>
   import Footer from "../components/Footer.svelte";
   import AuthHeader from "../components/auth/AuthHeader.svelte";
+  import { auth, isLogin } from '../store/auth/authStore'
   import { router } from 'tinro'
-  import { afterUpdate } from 'svelte'
 
   let active = ''
 
@@ -21,16 +21,6 @@
     element.scrollIntoView();
     router.goto('/login')
   }
-
-  afterUpdate(() => {
-    // 운영 환경에서만 작동
-    if (import.meta.env.PROD) {
-      let authCode = new URL(window.location.href).searchParams.get('code')
-      if (authCode != null && authCode.length > 1) {
-        router.goto(`/social/login/kakao?code=${authCode}`)
-      }
-    }
-  })
 
 </script>
 
@@ -86,6 +76,7 @@
     </div>
   </div>
 
+  {#if !$isLogin}
   <div class="p-5 text-center bg-body-tertiary border rounded-3">
     <h2 class="text-body-emphasis">회원가입 / 로그인</h2>
     <p>북마크, 플랜, 리뷰 기능을 위해선 회원가입 및 로그인이 필요합니다.</p>
@@ -93,5 +84,6 @@
       <button class="btn btn-create" type="button" on:click={goLogin}>로그인하기</button>
     </div>
   </div>
+  {/if}
 </main>
 <Footer />  
