@@ -54,8 +54,7 @@
   }
 
   const onUpdateReview = (id, title, description, reviewScore) => {
-    if (!titleLengthValidate()) return
-    if (!descriptionLengthValidate()) return
+    if (!titleLengthValidate() || !descriptionLengthValidate()) return
     if(confirm('리뷰를 수정하시겠습니까?')) {
       myReviewDetail.updateMyReview(id, title, description, reviewScore)
       editMode = false

@@ -16,8 +16,7 @@
   }
 
   const onUpdateReview = () => {
-    if (!titleLengthValidate()) return
-    if (!descriptionLengthValidate()) return
+    if (!titleLengthValidate() || !descriptionLengthValidate()) return
     reviews.updateReview(reviewValue)
   }
 
