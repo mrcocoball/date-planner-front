@@ -9,6 +9,7 @@ function setAuth() {
     uid: "",
     email: "",
     Authorization: "",
+    social: false,
   }
 
   const { subscribe, set, update } = writable({ ...initValues }); // 스프레드 이용 이유 : initValues가 참조되지 않고 복제되므로
@@ -104,6 +105,29 @@ function setAuth() {
     }
   }
 
+  const getKakaoAccessTokenWithdraw = async (code) => {
+    
+    // 환경변수 처리 필요
+    let clientKey = import.meta.env.VITE_KAKAO_CLIENT_KEY
+    let redirectUri = import.meta.env.VITE_OAUTH_REDIRECT_URL2
+
+    try {
+      const options = {
+        path: "https://kauth.kakao.com/oauth/token",
+        data: {
+          grant_type: "authorization_code",
+          client_id: clientKey,
+          redirect_uri: redirectUri,
+          code: code
+        },
+      };
+
+      const result = await postKakaoApi(options)
+      return result
+    } catch (error) {
+    }
+  }
+
   const registerCheck = async (access_token) => {
     try {
       await postApi({path: `/api/v1/oauth/check?accessToken=${access_token}`})
@@ -148,6 +172,36 @@ function setAuth() {
     }
   };
 
+  const withdraw = async () => {
+    try {
+      await delApi({path: `/api/v1/withdraw`});
+      set({...initValues})
+      isRefresh.set(false)
+      alert("회원 탈퇴 완료되었습니다. 이용해주셔서 감사합니다.");
+      router.goto("/");
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+  };
+
+  const socialWithdraw = async (access_token) => {
+    try {
+      const options = {
+        path: "/api/v1/withdraw",
+        data: {
+          access_token: access_token,
+        },
+      };
+      await delApi(options);
+      set({...initValues})
+      isRefresh.set(false)
+      alert("회원 탈퇴 및 카카오 로그인 연동이 해제되었습니다. 이용해주셔서 감사합니다.");
+      router.goto("/");
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+  };
+
   return {
     subscribe,
     refresh,
@@ -156,9 +210,12 @@ function setAuth() {
     resetUserInfo,
     register,
     getKakaoAccessToken,
+    getKakaoAccessTokenWithdraw,
     registerCheck,
     socialRegister,
     socialLogin,
+    withdraw,
+    socialWithdraw
   };
 }
 
