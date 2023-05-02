@@ -72,7 +72,6 @@ function setReviews() {
 
   const fetchReviews = async (place_id) => {    
     let path = `/api/v1/reviews/list/${place_id}`
-    requestPath.set(path)
 
     try {
 
@@ -97,6 +96,7 @@ function setReviews() {
         return datas
       })
 
+      requestPath.set(path)
       currentReviewPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }

@@ -70,7 +70,6 @@ function setPlans() {
 
   const fetchPlans = async () => {    
     let path = `/api/v1/plans`
-    requestPath.set(path)
 
     try {
 
@@ -94,7 +93,8 @@ function setPlans() {
         datas.data.totalPages = newData.totalPages
         return datas
       })
-
+    
+      requestPath.set(path)
       currentPlanPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
@@ -158,9 +158,6 @@ function setPlans() {
         datas.data.content = [newPlan.data, ...datas.data.content]
         return datas
       })
-
-      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
-      //plans.resetPlans()
 
       return
 
@@ -409,9 +406,6 @@ function setPlanDetail() {
         datas.data.detailPlans = [...datas.data.detailPlans, newDetailPlan.data]
         return datas
       })
-
-      // 일단 임시로 artices.resetArticles() 호출, 백엔드 API 쪽 리턴값 변경 후 삭제
-      //plans.resetPlans()
 
       return
 

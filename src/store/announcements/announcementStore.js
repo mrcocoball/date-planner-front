@@ -70,7 +70,6 @@ function setAnnouncements() {
 
   const fetchAnnouncements = async () => {  
     let path = `/api/v1/announcements`
-    requestPath.set(path)
 
     try {
 
@@ -94,7 +93,8 @@ function setAnnouncements() {
         datas.data.totalPages = newData.totalPages
         return datas
       })
-
+      
+      requestPath.set(path)
       currentAnnouncementPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
@@ -110,7 +110,6 @@ function setAnnouncements() {
     if (categoryId != 0) {
       path = path + `&categoryId=${categoryId}`
     }
-    requestPath.set(path)
 
     try {
 
@@ -135,6 +134,7 @@ function setAnnouncements() {
         return datas
       })
 
+      requestPath.set(path)
       currentAnnouncementPaginationBar.setPaginationBar(0, getDatas.data.totalPages)
 
     }
