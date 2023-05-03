@@ -115,9 +115,9 @@
       </div>
     </li>
     <li class="list-group-item">
-      <h6>장소 URL(카카오맵)</h6>
+      <h6>장소 정보 보기 (카카오맵)</h6>
       <div>
-        <span>{$myReviewDetail.data.placeUrl}</span>
+        <a href={$myReviewDetail.data.placeUrl} target="_blank">확인하기</a>
       </div>
     </li>
   </ul>

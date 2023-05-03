@@ -122,7 +122,7 @@
         <div>
           <h6>리뷰 평점 / 리뷰 건수</h6>
           <span class="review-score" id="reviewCount">{reviewScoreStar}</span>
-          <span>({$placeDetail.data.avg_review_score}) / {$placeDetail.data.review_count} 건</span>
+          <span>({Number($placeDetail.data.avg_review_score).toFixed(1)}) / {$placeDetail.data.review_count} 건</span>
         </div>
       </li>
       {#if $placeDetail.data.description}
