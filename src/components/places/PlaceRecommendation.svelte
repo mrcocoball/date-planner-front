@@ -31,7 +31,7 @@
     <span>{place.address_name}</span>
   </div>
   <div class="place-sub">
-    <span>평점 : {place.avg_review_score}</span>
+    <span>평점 : {Number(place.avg_review_score).toFixed(1)} ({place.review_count})</span>
     <br>
     <span class="review-score">{reviewScoreStar}</span>
   </div>
