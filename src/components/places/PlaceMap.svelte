@@ -109,13 +109,14 @@
         })
 
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div><span style="font-size:smaller">' + positions[i].place_name + '</span></div>'
+            content: '<span class="info-window-title">' + positions[i].place_name + '</span>'
         })
-
+        
         kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+      }      
       
-      }        
     }
   })
 
