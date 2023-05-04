@@ -1,0 +1,708 @@
+<mxfile host="app.diagrams.net" modified="2023-05-03T15:09:54.713Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="J_AP4BDYTmWGOTs7TM23" version="21.2.6" type="device">
+  <diagram name="Page-1" id="13e1069c-82ec-6db2-03f1-153e76fe0fe0">
+    <mxGraphModel dx="1304" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7baba1c4bc27f4b0-2" value="페이지" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="314" y="109" width="100" height="2571" as="geometry" />
+        </mxCell>
+        <mxCell id="7baba1c4bc27f4b0-3" value="스토어 / Axios" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="534" y="109" width="100" height="2571" as="geometry" />
+        </mxCell>
+        <mxCell id="7baba1c4bc27f4b0-4" value="KAKAO_API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="909" y="109" width="100" height="2571" as="geometry" />
+        </mxCell>
+        <mxCell id="7baba1c4bc27f4b0-8" value="유저" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="94" y="109" width="100" height="2571" as="geometry" />
+        </mxCell>
+        <mxCell id="7baba1c4bc27f4b0-11" value="1. 공지사항 목록 페이지 접근" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" parent="1" edge="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="143.5" y="219" as="sourcePoint" />
+            <mxPoint x="363.5" y="219" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7kwrDIypniRsh-_axAG-28" value="유저" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="94" y="2680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d7kwrDIypniRsh-_axAG-29" value="페이지" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="314" y="2680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d7kwrDIypniRsh-_axAG-30" value="스토어 / Axios" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="534" y="2680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d7kwrDIypniRsh-_axAG-31" value="KAKAO_API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="909" y="2680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d7kwrDIypniRsh-_axAG-33" value="&lt;span style=&quot;font-size: 25px;&quot;&gt;&lt;b&gt;고객센터 - 공지사항 조회, FAQ 조회, Q&amp;amp;A 조회, 작성, 수정, 삭제&lt;/b&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="154" y="40" width="792" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fj5dnLexoJdEt0vvxZNv-23" value="백엔드 API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
+          <mxGeometry x="764" y="109" width="100" height="2571" as="geometry" />
+        </mxCell>
+        <mxCell id="fj5dnLexoJdEt0vvxZNv-26" value="백엔드 API" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="764" y="2680" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fj5dnLexoJdEt0vvxZNv-49" value="공지사항 목록 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=126;height=20;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="74" y="170" width="930" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-59" value="34. 질문 삭제 버튼 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9971" relative="1" as="geometry">
+            <mxPoint x="144" y="2240.26" as="sourcePoint" />
+            <mxPoint x="364" y="2240.26" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-60" value="35. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="363" y="2270.26" as="sourcePoint" />
+            <mxPoint x="583.5" y="2270.26" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-61" value="36. [DELETE] /api/v1/questions/{id}" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="582.5" y="2290.26" as="sourcePoint" />
+            <mxPoint x="813" y="2290.26" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="813" y="2290.26" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-63" value="38. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="2364.26" as="sourcePoint" />
+            <mxPoint x="363" y="2364.26" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="2364.26" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-64" value="39. 질문 리스트 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="2385.26" as="sourcePoint" />
+            <mxPoint x="143" y="2385.26" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="2385.26" />
+              <mxPoint x="333" y="2385.26" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-65" value="37. 질문 삭제 후 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="2350" as="sourcePoint" />
+            <mxPoint x="583" y="2350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="2350" />
+              <mxPoint x="749" y="2350" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-68" value="질문 삭제" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=90;height=20;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="74" y="2190" width="930" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-69" value="2. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="237.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="237.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-70" value="3. [GET] /api/v1/announcements" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="257.27" as="sourcePoint" />
+            <mxPoint x="814" y="257.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="257.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-71" value="5. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="313" as="sourcePoint" />
+            <mxPoint x="363" y="313" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="313" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-72" value="6. 공지사항 리스트 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="334" as="sourcePoint" />
+            <mxPoint x="143" y="334" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="334" />
+              <mxPoint x="333" y="334" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-73" value="4. 공지사항 리스트 결과 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="289" as="sourcePoint" />
+            <mxPoint x="583" y="289" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="289" />
+              <mxPoint x="749" y="289" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-84" value="7. 리스트 내 공지사항 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9967" relative="1" as="geometry">
+            <mxPoint x="143.5" y="433" as="sourcePoint" />
+            <mxPoint x="363.5" y="433" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-85" value="공지사항 단건 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=116;height=24;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="74" y="386" width="930" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-86" value="8. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="451.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="451.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-87" value="9. [GET] /api/v1/announcements/{id}" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="471.27" as="sourcePoint" />
+            <mxPoint x="814" y="471.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="471.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-88" value="11. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="527" as="sourcePoint" />
+            <mxPoint x="363" y="527" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="527" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-89" value="12. 공지사항 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="362" y="548" as="sourcePoint" />
+            <mxPoint x="142" y="548" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="362" y="548" />
+              <mxPoint x="332" y="548" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-90" value="10. 공지사항 데이터 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="503" as="sourcePoint" />
+            <mxPoint x="583" y="503" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="503" />
+              <mxPoint x="749" y="503" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-102" value="1. FAQ 목록 페이지 접근" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="143.5" y="659" as="sourcePoint" />
+            <mxPoint x="363.5" y="659" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-103" value="FAQ 목록 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=96;height=20;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="74" y="610" width="930" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-104" value="2. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="677.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="677.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-105" value="3. [GET] /api/v1/faqs" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="697.27" as="sourcePoint" />
+            <mxPoint x="814" y="697.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="697.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-106" value="5. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="753" as="sourcePoint" />
+            <mxPoint x="363" y="753" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="753" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-107" value="6. FAQ 리스트 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="774" as="sourcePoint" />
+            <mxPoint x="143" y="774" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="774" />
+              <mxPoint x="333" y="774" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-108" value="4. FAQ 리스트 결과 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="729" as="sourcePoint" />
+            <mxPoint x="583" y="729" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="729" />
+              <mxPoint x="749" y="729" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-109" value="7. 리스트 내 FAQ 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9967" relative="1" as="geometry">
+            <mxPoint x="143.5" y="873" as="sourcePoint" />
+            <mxPoint x="363.5" y="873" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-110" value="FAQ 단건 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=96;height=24;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="74" y="826" width="930" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-111" value="8. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="891.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="891.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-112" value="9. [GET] /api/v1/faqs/{id}" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="911.27" as="sourcePoint" />
+            <mxPoint x="814" y="911.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="911.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-113" value="11. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="967" as="sourcePoint" />
+            <mxPoint x="363" y="967" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="967" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-114" value="12. FAQ 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="362" y="988" as="sourcePoint" />
+            <mxPoint x="142" y="988" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="362" y="988" />
+              <mxPoint x="332" y="988" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-115" value="10. FAQ 데이터 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="943" as="sourcePoint" />
+            <mxPoint x="583" y="943" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="943" />
+              <mxPoint x="749" y="943" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-116" value="1. 사용자 작성 질문 목록 페이지 접근" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9983" relative="1" as="geometry">
+            <mxPoint x="143.5" y="1089" as="sourcePoint" />
+            <mxPoint x="363.5" y="1089" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-117" value="질문 목록 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=96;height=20;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1040" width="930" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-118" value="2. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="1107.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="1107.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-119" value="3. [GET] /api/v1/questions" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="1127.27" as="sourcePoint" />
+            <mxPoint x="814" y="1127.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="1127.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-120" value="5. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="1183" as="sourcePoint" />
+            <mxPoint x="363" y="1183" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="1183" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-121" value="6. 사용자 작성 질문 리스트 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="1204" as="sourcePoint" />
+            <mxPoint x="143" y="1204" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="1204" />
+              <mxPoint x="333" y="1204" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-122" value="4. 질문 리스트 결과 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="1159" as="sourcePoint" />
+            <mxPoint x="583" y="1159" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="1159" />
+              <mxPoint x="749" y="1159" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-123" value="7. 리스트 내 질문 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9967" relative="1" as="geometry">
+            <mxPoint x="143.5" y="1303" as="sourcePoint" />
+            <mxPoint x="363.5" y="1303" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-124" value="질문 단건 조회" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=96;height=24;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1256" width="930" height="274" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-125" value="8. 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="364" y="1321.27" as="sourcePoint" />
+            <mxPoint x="584.5" y="1321.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-126" value="9. [GET] /api/v1/questions/{id}" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="583.5" y="1341.27" as="sourcePoint" />
+            <mxPoint x="814" y="1341.27" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="814" y="1341.27" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-127" value="11. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="583" y="1397" as="sourcePoint" />
+            <mxPoint x="363" y="1397" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="563" y="1397" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-128" value="12. 질문 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="362" y="1418" as="sourcePoint" />
+            <mxPoint x="142" y="1418" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="362" y="1418" />
+              <mxPoint x="332" y="1418" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-129" value="10. 질문 데이터 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="1373" as="sourcePoint" />
+            <mxPoint x="583" y="1373" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="1373" />
+              <mxPoint x="749" y="1373" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-151" value="13. 질문 내 답변 리스트 컴포넌트 노출" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9985" relative="1" as="geometry">
+            <mxPoint x="364" y="1453" as="sourcePoint" />
+            <mxPoint x="584.5" y="1453" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-153" value="14. 데이터를 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="584" y="1486.67" as="sourcePoint" />
+            <mxPoint x="364" y="1486.67" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564" y="1486.67" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-154" value="15. 질문 내 답변 리스트 화면 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="364" y="1503" as="sourcePoint" />
+            <mxPoint x="144" y="1503" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="364" y="1503" />
+              <mxPoint x="334" y="1503" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-166" value="24. 질문 수정하기 버튼 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9975" relative="1" as="geometry">
+            <mxPoint x="145.25" y="1893.27" as="sourcePoint" />
+            <mxPoint x="365.25" y="1893.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-167" value="25. 수정 대상 질문 데이터 전달 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="365.75" y="1911.54" as="sourcePoint" />
+            <mxPoint x="586.25" y="1911.54" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-168" value="26. 데이터를 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="584.75" y="1951.27" as="sourcePoint" />
+            <mxPoint x="364.75" y="1951.27" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564.75" y="1951.27" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-169" value="27. 질문 수정 폼 노출" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363.75" y="1972.27" as="sourcePoint" />
+            <mxPoint x="143.75" y="1972.27" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363.75" y="1972.27" />
+              <mxPoint x="333.75" y="1972.27" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-170" value="28. 수정 폼 내 수정 버튼 클릭" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9975" relative="1" as="geometry">
+            <mxPoint x="144.5" y="2013.27" as="sourcePoint" />
+            <mxPoint x="364.5" y="2013.27" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-171" value="29. 폼 검증, 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="365" y="2031.54" as="sourcePoint" />
+            <mxPoint x="585.5" y="2031.54" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-172" value="30. [PUT] /api/v1/questions/{id}" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1;" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="584.5" y="2051.54" as="sourcePoint" />
+            <mxPoint x="815" y="2051.54" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="815" y="2051.54" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-173" value="32. 결과값 저장 및 컴포넌트에 전달" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="584" y="2107.27" as="sourcePoint" />
+            <mxPoint x="364" y="2107.27" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564" y="2107.27" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-174" value="33. 질문 화면 업데이트 처리" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="2128.27" as="sourcePoint" />
+            <mxPoint x="143" y="2128.27" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="2128.27" />
+              <mxPoint x="333" y="2128.27" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-175" value="31. 질문 데이터 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814" y="2083.27" as="sourcePoint" />
+            <mxPoint x="583" y="2083.27" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="779" y="2083.27" />
+              <mxPoint x="749" y="2083.27" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-176" value="질문 수정" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=90;height=20;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1850" width="930" height="313" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-177" value="19. 폼 검증, 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.997" relative="1" as="geometry">
+            <mxPoint x="364" y="1682.42" as="sourcePoint" />
+            <mxPoint x="584.5" y="1682.42" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-178" value="23. 질문 작성 및 질문 목록 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="364" y="1788.09" as="sourcePoint" />
+            <mxPoint x="144" y="1788.09" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="364" y="1788.09" />
+              <mxPoint x="334" y="1788.09" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-179" value="16. 질문 작성 버튼 클릭&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9977" relative="1" as="geometry">
+            <mxPoint x="144" y="1608.09" as="sourcePoint" />
+            <mxPoint x="364.5" y="1608.09" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-180" value="&lt;font&gt;20. [POST] /api/v1/questions (등록)&lt;br&gt;&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="584" y="1698.09" as="sourcePoint" />
+            <mxPoint x="813.5" y="1698" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-181" value="21. 질문 등록 처리 후 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="813.5" y="1748.09" as="sourcePoint" />
+            <mxPoint x="584" y="1748.09" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="764" y="1748.09" />
+              <mxPoint x="734" y="1748.09" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-182" value="22. 업데이트된 질문 목록 상태값 저장" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="584" y="1768.09" as="sourcePoint" />
+            <mxPoint x="364" y="1768.09" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564" y="1768.09" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-183" value="질문 작성" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=90;height=20;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1560" width="930" height="254" as="geometry" />
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-184" value="17. 질문 작성 폼 노출" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="363" y="1640" as="sourcePoint" />
+            <mxPoint x="143" y="1640" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="363" y="1640" />
+              <mxPoint x="333" y="1640" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-185" value="18. 질문 작성 및 등록 버튼 클릭&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9977" relative="1" as="geometry">
+            <mxPoint x="144" y="1674.09" as="sourcePoint" />
+            <mxPoint x="364.5" y="1674.09" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-186" value="41. 폼 검증, 백엔드 API 서버 통신 요청" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.997" relative="1" as="geometry">
+            <mxPoint x="365" y="2503.33" as="sourcePoint" />
+            <mxPoint x="585.5" y="2503.33" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-187" value="45. 답변 작성 및 답변 목록 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="364" y="2609" as="sourcePoint" />
+            <mxPoint x="144" y="2609" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="364" y="2609" />
+              <mxPoint x="334" y="2609" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-188" value="&lt;font&gt;42. [POST] /api/v1/answers (등록)&lt;br&gt;&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="585" y="2519" as="sourcePoint" />
+            <mxPoint x="814.5" y="2518.91" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-189" value="43. 답변 등록 처리 후 업데이트" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="814.5" y="2569" as="sourcePoint" />
+            <mxPoint x="585" y="2569" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="765" y="2569" />
+              <mxPoint x="735" y="2569" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-190" value="44. 업데이트된 답변 목록 상태값 저장" style="endArrow=classic;html=1;rounded=0;dashed=1;align=right;fontSize=12;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-1" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="584" y="2589" as="sourcePoint" />
+            <mxPoint x="364" y="2589" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564" y="2589" />
+            </Array>
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-191" value="40. 답변 작성 및 등록 버튼 클릭&amp;nbsp;" style="html=1;verticalAlign=bottom;endArrow=block;labelBackgroundColor=none;fontFamily=Helvetica;fontSize=12;edgeStyle=elbowEdgeStyle;elbow=vertical;align=left;fontStyle=1" edge="1" parent="1">
+          <mxGeometry x="-0.9977" relative="1" as="geometry">
+            <mxPoint x="145" y="2495" as="sourcePoint" />
+            <mxPoint x="365.5" y="2495" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="N0yfgly27lMoUbKmG3n6-192" value="답변 작성" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=90;height=20;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="75" y="2440" width="930" height="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
