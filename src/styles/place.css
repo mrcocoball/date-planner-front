@@ -400,3 +400,10 @@ div.place-detail-header {
 div.place-search-bar-region2 {
   margin-bottom: 10px;
 }
+
+span.info-window-title {
+  display: block;
+  height: 20px;
+  font-size: smaller;
+  overflow: hidden;
+}
